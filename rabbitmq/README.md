@@ -1,0 +1,3 @@
+# @ladesa-ro/rabbitmq
+
+TBD.
