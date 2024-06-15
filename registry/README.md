@@ -1,0 +1,3 @@
+# @ladesa-ro/registry
+
+TBD.
