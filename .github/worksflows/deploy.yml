@@ -1,0 +1,18 @@
+name: Get pods
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-to-control-plane:
+    name: Deploy to Control Plane
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions-hub/kubectl@master
+        env:
+          KUBE_HOST: ${{ secrets.KUBE_HOST }}
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        with:
+          args: get pods
