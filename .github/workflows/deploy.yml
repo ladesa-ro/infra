@@ -6,7 +6,7 @@ on:
 jobs:
   deploy-to-control-plane:
     name: Deploy to Control Plane
-    runs-on: devops
+    runs-on: self-hosted
 
     steps:
     - name: executing remote ssh commands
