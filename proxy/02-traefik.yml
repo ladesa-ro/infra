@@ -27,3 +27,7 @@ spec:
               containerPort: 80
             - name: dashboard
               containerPort: 8080
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: "300Mi"
