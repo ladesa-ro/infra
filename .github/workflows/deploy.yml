@@ -6,15 +6,8 @@ on:
 jobs:
   deploy-to-control-plane:
     name: Deploy to Control Plane
-    runs-on: ubuntu-latest
+    runs-on: devops
 
     steps:
     - name: executing remote ssh commands
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.HOST }}
-        port: ${{ secrets.PORT }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        script: |
-          kubectl get pods
+      run: kubectl get pods
