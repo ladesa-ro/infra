@@ -6,8 +6,30 @@ on:
 jobs:
   deploy-to-control-plane:
     name: Deploy to Control Plane
-    runs-on: self-hosted
+   
+    runs-on: ubuntu-latest
 
     steps:
+    
+    - uses: actions/checkout@v4
+    
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.HOST }}
+        port: ${{ secrets.PORT }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        rm: true
+        source: "*,!.git"
+        target: /tmp/ladesa-ro/infra/repo
+    
     - name: executing remote ssh commands
-      run: kubectl get pods
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.HOST }}
+        port: ${{ secrets.PORT }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: |
+          kubectl get pods
