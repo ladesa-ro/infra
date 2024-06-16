@@ -1,0 +1,11 @@
+bases:
+  - ../../base
+
+namespace: prod
+
+patches:
+  - path: replicas.yaml
+
+configMapGenerator:
+  - name: ladesaro-api-configmap
+    env: config.properties

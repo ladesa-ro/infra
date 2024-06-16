@@ -1,0 +1,13 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+
+commonLabels:
+  app: ladesaro-api
+
+commonAnnotations:
+  app: ladesaro-api-annotations
+
+namePrefix: ladesaro-api-
+
+nameSuffix: -v1
