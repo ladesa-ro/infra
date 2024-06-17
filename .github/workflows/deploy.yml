@@ -4,27 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  copy-files-to-control-plane:
-    name: Copy files to the control plane machine
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: copy file via ssh password
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.HOST }}
-          port: ${{ secrets.PORT }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          rm: true
-          source: "*,!.git"
-          target: /tmp/ladesa-ro/infra/repo
-
   deploy-to-control-plane:
     name: Run deploy script
     runs-on: ubuntu-latest
-    needs: copy-files-to-control-plane
     steps:
       - name: executing remote ssh commands
         uses: appleboy/ssh-action@v1.0.3
@@ -34,6 +16,22 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           script: |
-            kubectl get pods;
-            cd /tmp/ladesa-ro/infra/repo;
+            TMP_GH_REPOSITORY_URL=${{ github.repositoryUrl }}
+
+            LADESA_REPOSITORY=${TMP_GH_REPOSITORY_URL/git:/https:}
+            LADESA_REPOSITORY_BRANCH=${{ github.ref_name }}
+            LADESA_LOCAL_PATH=/tmp/ladesa-ro/infra/repo
+
+            if [ ! -d ${LADESA_LOCAL_PATH}/.git ]; then
+              rm -rf ${LADESA_LOCAL_PATH};
+              git clone ${LADESA_REPOSITORY} ${LADESA_LOCAL_PATH};
+            fi
+
+            cd ${LADESA_LOCAL_PATH};
+            git remote set-url origin ${LADESA_REPOSITORY};
+
+            git fetch -p;
+            git clean -f -x;
+            git reset --hard origin/${LADESA_REPOSITORY_BRANCH};
+
             ./deploy.sh;
