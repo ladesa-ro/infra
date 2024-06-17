@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: hello-world
-  namespace: ${APP_NAMESPACE}
+  namespace: traefik
   labels:
     app: hello-world
 spec:
@@ -26,7 +26,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hello-world
-  namespace: ${APP_NAMESPACE}
+  namespace: traefik
 spec:
   ports:
     - name: web
@@ -34,20 +34,36 @@ spec:
       targetPort: web
   selector:
     app: hello-world
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: hello-world-ingress
+#   namespace: traefik
+# spec:
+#   rules:
+#     - http:
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: hello-world
+#                 port:
+#                   name: web
 ---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
 metadata:
-  name: hello-world-ingress
-  namespace: ${APP_NAMESPACE}
+  name: whoami-ingress
+  namespace: traefik
 spec:
-  rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: hello-world
-                port:
-                  name: web
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: PathPrefix(`/`)
+      services:
+        - name: hello-world
+          namespace: traefik
+          port: web

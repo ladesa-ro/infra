@@ -1,16 +1,10 @@
 #!/bin/bash
 
 set +e
+set +x
 
-export CLUSTER_NAME=traefik
-export TRAEFIK_NAMESPACE=traefik
-export APP_NAMESPACE=default
+kubectl apply -f traefik-namespaces.yml;
 
-echo "Deploying traefik components:"
-traefik_files=("namespaces" "clusterroles" "deployments" "services")
-for f in ${traefik_files[@]}; do
-  envsubst < traefik/${f}.yaml | kubectl apply -f -
-done
+helm upgrade --install traefik traefik/traefik --namespace=traefik --values traefik-helm-custom-values.yml;
 
-echo "Deploying sample app:"
-envsubst < sample-whoami.yaml | kubectl apply -f -
+kubectl apply -f sample-whoami.yaml;
