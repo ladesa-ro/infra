@@ -1,4 +1,4 @@
-# @ladesa-ro/gerar-horario-service
+# @ladesa-ro/gerar-horario
 
 Serviço de Geração de Horário.
 

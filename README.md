@@ -14,6 +14,6 @@ Este projeto conta com os dados necessários para o levantamento da infraestrutu
 
 ## @ladesa-ro/web
 
-## @ladesa-ro/gerar-horario-service
+## @ladesa-ro/gerar-horario
 
 TBD.

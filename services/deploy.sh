@@ -2,4 +2,4 @@
 
 set -x;
 
-(cd ./services; ./deploy.sh);
+(cd ./proxy; ./deploy.sh);

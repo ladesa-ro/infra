@@ -1,14 +1,12 @@
-name: Get pods
+name: Deploy Services
 
 on:
   workflow_dispatch:
 
 jobs:
-  deploy-to-control-plane:
-    name: Deploy to Control Plane
-
+  copy-files-to-control-plane:
+    name: Copy files to the control plane machine
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -23,6 +21,11 @@ jobs:
           source: "*,!.git"
           target: /tmp/ladesa-ro/infra/repo
 
+  deploy-to-control-plane:
+    name: Run deploy script
+    runs-on: ubuntu-latest
+    needs: copy-files-to-control-plane
+    steps:
       - name: executing remote ssh commands
         uses: appleboy/ssh-action@v1.0.3
         with:
