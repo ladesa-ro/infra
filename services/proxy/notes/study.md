@@ -10,7 +10,7 @@ kubectl config set-context --current --namespace=traefik;
 
 ```sh
 # helm install traefik traefik/traefik --values=traefik-values.yml;
-helm upgrade --install traefik traefik/traefik --namespace=traefik --values=traefik-values.yml;
+helm upgrade --install traefik traefik/traefik --namespace=traefik --values=helm/values.yml;
 ```
 
 ```sh

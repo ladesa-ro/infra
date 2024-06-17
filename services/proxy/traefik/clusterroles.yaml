@@ -30,17 +30,11 @@ rules:
       - ingresses/status
     verbs:
       - update
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: traefik-account
-  namespace: ${TRAEFIK_NAMESPACE}
----
+
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: traefik-role-binding
+  name: traefik-role
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -48,4 +42,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: traefik-account
-    namespace: ${TRAEFIK_NAMESPACE}
+    namespace: traefik
