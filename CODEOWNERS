@@ -1,2 +1,3 @@
 .github @ladesa-ro/security
 CODEOWNERS @ladesa-ro/security
+**/*.{yml,sh,yaml} @ladesa-ro/security
