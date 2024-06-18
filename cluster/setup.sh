@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -x;
+
+(cd ./00-setup-environment; ./setup-environment.sh);
+(cd ./01-init-kubernetes-kind-cluster; ./init-cluster.sh);
+(cd ./02-setup-k8s-traefik-integration; ./setup-k8s-traefik.sh);
