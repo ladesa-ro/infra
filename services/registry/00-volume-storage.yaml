@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: quay-app_storage-pv
+  name: quay-app-storage-pv
   namespace: default
   labels:
     app: quay
@@ -15,7 +15,7 @@ spec:
     - ReadWriteOnce
   claimRef:
     namespace: default
-    name: quay-app_storage-pv-claim
+    name: quay-app-storage-pvc
   persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
@@ -30,13 +30,13 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: quay-app_storage-pvc
+  name: quay-app-storage-pvc
   namespace: default
   labels:
     app: quay
 spec:
   storageClassName: manual
-  volumeName: quay-app_storage-pv
+  volumeName: quay-app-storage-pv
   accessModes:
     - ReadWriteMany
   resources:

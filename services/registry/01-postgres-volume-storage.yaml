@@ -15,7 +15,7 @@ spec:
     - ReadWriteOnce
   claimRef:
     namespace: default
-    name: quay-postgres-storage-pv-claim
+    name: quay-postgres-storage-pvc
   persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:

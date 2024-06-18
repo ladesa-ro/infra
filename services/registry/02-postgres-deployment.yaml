@@ -3,11 +3,11 @@ kind: Secret
 metadata:
   name: quay-postgres-secret
   namespace: default
+type: Opaque
 data:
-  POSTGRES_USER: user
-  POSTGRES_PASSWORD: pass
-  POSTGRES_DB: db
-  POSTGRES_INITDB_ARGS: args
+  POSTGRES_USER: cXVheQ==
+  POSTGRES_PASSWORD: YjY5MDY4ZThiNGViMjA1YmM3YTBlMGMxZmMzY2E4ZmIzYjQyY2Y2YWEwYmM3OWY1
+  POSTGRES_DB: cmVnaXN0cnk=
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -48,7 +48,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: quay-postgres-config
-            - configMapRef:
+            - secretRef:
                 name: quay-postgres-secret
           volumeMounts:
             - name: postgresdata

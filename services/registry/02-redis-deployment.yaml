@@ -3,8 +3,9 @@ kind: Secret
 metadata:
   name: quay-redis-secret
   namespace: default
+type: Opaque
 data:
-  REDIS_PASSWORD: 7bc20f6b62174328b00d811d7997307e
+  REDIS_PASSWORD: MzY0ZTFmNDlhYjRhOWUxMjBiNGZmN2NlMzJmODQ4ODMzNTUwYTQ2MTQ3ZThiODRj
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -28,11 +29,8 @@ spec:
           ports:
             - containerPort: 6379
           envFrom:
-            - configMapRef:
+            - secretRef:
                 name: quay-redis-secret
-          volumeMounts:
-            - name: postgresdata
-              mountPath: /var/lib/postgresql/data
           resources:
             limits:
               cpu: "0.5"
