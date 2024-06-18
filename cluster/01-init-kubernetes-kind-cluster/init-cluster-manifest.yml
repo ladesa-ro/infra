@@ -10,7 +10,7 @@ nodes:
         kind: InitConfiguration
         nodeRegistration:
           kubeletExtraArgs:
-            node-labels: "ingress-ready=true"
+            node-labels: "ingress-ready=true,x-ladesa-infra-host=yes"
     extraPortMappings:
       - containerPort: 80
         hostPort: 3080 # TODO: change to 80 when ready
@@ -19,5 +19,8 @@ nodes:
       - containerPort: 443
         hostPort: 3443 # TODO: change to 443 when ready
         protocol: TCP
+    extraMounts:
+      - hostPath: /var/lib/ladesa-ro/infra/storage
+        containerPath: /mnt/storage
   - role: worker
   - role: worker
