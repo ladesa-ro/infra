@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x;
+set -xe;
 
 (cd ./00-setup-environment; ./setup-environment.sh);
 (cd ./01-init-kubernetes-kind-cluster; ./init-cluster.sh);
