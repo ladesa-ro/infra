@@ -1,6 +1,6 @@
 # Configurar o Cluster 
 
-A infraestrutura do sistema utiliza como base o Kubernetes. Foi decidido o uso da implementação `kind`.
+A estrutura de implantação do sistema utiliza como base o Kubernetes e o Docker Engine.
 
 ## Tecnologias de Base
 
@@ -17,7 +17,7 @@ A infraestrutura do sistema utiliza como base o Kubernetes. Foi decidido o uso d
 Este projeto conta com um script utilitário para a instalação das ferramentas `kind`, `kubectl` e `helm` no linux x64.
 
 ```sh
-./path-to-script.sh
+./setup-cluster.sh
 ```
 
 #### Docker
@@ -55,7 +55,7 @@ kubectl version --client
 
 Por favor, veja a seção oficial de instalação do helm: <https://helm.sh/docs/intro/install/>.
 
-Para verificar instalação do kubectl:
+Para verificar instalação do helm:
 
 ```sh
 helm version
