@@ -15,12 +15,14 @@ cd infra;
 
 Este projeto foi projetado e testado para rodar nos seguintes sistemas operacionais:
 
-- `Debian GNU/Linux 11 (bullseye)` - `GNU/Linux - x86_64 - 5.10.0-25-amd64`
+- `Debian GNU/Linux 11 (bullseye)` 
 
+  - `GNU/Linux - x86_64 @ 5.10.0-25-amd64`
   - `GNU bash @ 5.1.4`
 
-- `Manjaro Linux 24.0.2` - `GNU/Linux - x86_64 - 6.6.33-1-MANJARO`
+- `Manjaro Linux 24.0.2`
 
+  - `GNU/Linux - x86_64 @ 6.6.33-1-MANJARO`
   - `zsh @ 5.9`
 
 A seguir, estão documentadas as implantações de cada pedaço do sistema. Note que a configuração do cluster deve ser feita uma vez, enquanto o deploy dos serviços serão recorrentes.
@@ -41,7 +43,7 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 
 ## Scripts de conveniência
 
-- [`cluster/ssetup.sh`](./cluster/setup.sh)
+- [`cluster/setup.sh`](./cluster/setup.sh)
 
 ```sh
 ./cluster/setup.sh
