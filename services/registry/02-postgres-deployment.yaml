@@ -1,0 +1,73 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: quay-postgres-secret
+  namespace: default
+data:
+  POSTGRES_USER: user
+  POSTGRES_PASSWORD: pass
+  POSTGRES_DB: db
+  POSTGRES_INITDB_ARGS: args
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: quay-postgres-config
+  namespace: default
+data:
+  postgresql.conf: |
+    max_connections = 100
+    shared_buffers = 256MB
+    log_statement = 'all'
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quay-postgres
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quay-postgres
+  template:
+    metadata:
+      labels:
+        app: quay-postgres
+    spec:
+      volumes:
+        - name: postgresdata
+          persistentVolumeClaim:
+            claimName: quay-postgres-storage-pvc
+      containers:
+        - name: quay-postgres
+          image: "postgres:15"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: quay-postgres-config
+            - configMapRef:
+                name: quay-postgres-secret
+          volumeMounts:
+            - name: postgresdata
+              mountPath: /var/lib/postgresql/data
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: "512Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quay-postgres
+  namespace: default
+  labels:
+    app: quay
+spec:
+  type: NodePort
+  ports:
+    - port: 5432
+  selector:
+    app: quay-postgres

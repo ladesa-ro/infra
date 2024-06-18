@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: quay-redis-secret
+  namespace: default
+data:
+  REDIS_PASSWORD: 7bc20f6b62174328b00d811d7997307e
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quay-redis
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quay-redis
+  template:
+    metadata:
+      labels:
+        app: quay-redis
+    spec:
+      containers:
+        - name: quay-redis
+          image: "bitnami/redis:latest"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 6379
+          envFrom:
+            - configMapRef:
+                name: quay-redis-secret
+          volumeMounts:
+            - name: postgresdata
+              mountPath: /var/lib/postgresql/data
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: "512Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quay-redis
+  namespace: default
+  labels:
+    app: quay
+spec:
+  type: NodePort
+  ports:
+    - port: 6379
+  selector:
+    app: quay-redis

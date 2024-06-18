@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: quay-postgres-storage-pv
+  namespace: default
+  labels:
+    app: quay
+spec:
+  volumeMode: Filesystem
+  hostPath:
+    path: /mnt/storage/quay/database
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  claimRef:
+    namespace: default
+    name: quay-postgres-storage-pv-claim
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: x-ladesa-infra-host
+              operator: In
+              values:
+                - "yes"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: quay-postgres-storage-pvc
+  namespace: default
+  labels:
+    app: quay
+spec:
+  storageClassName: manual
+  volumeName: quay-postgres-storage-pv
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
