@@ -39,7 +39,7 @@ spec:
             - name: app_config
               mountPath: /conf/stack
             - name: app_log
-              mountPath: /var/log
+              mountPath: /var/log/quay
             # - name: app_tmp
             #   mountPath: /tmp
           resources:
