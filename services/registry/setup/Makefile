@@ -19,3 +19,6 @@ setup-logs:
 
 setup-cleanup:
 	docker rm -f ${CONFIG_CONTAINER_NAME}
+
+copy:
+	cp config.yaml /var/lib/ladesa-ro/infra/storage/quay/config/config.yaml
