@@ -15,11 +15,7 @@ nodes:
       - containerPort: 80
         hostPort: 3080 # TODO: change to 80 when ready
         protocol: TCP
-        listenAddress: "0.0.0.0" # Optional, defaults to "0.0.0.0"
-      - containerPort: 8080
-        hostPort: 8080
-        protocol: TCP
-        listenAddress: "0.0.0.0" # Optional, defaults to "0.0.0.0"
+        listenAddress: "0.0.0.0"
       - containerPort: 443
         hostPort: 3443 # TODO: change to 443 when ready
         protocol: TCP

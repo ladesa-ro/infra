@@ -1,4 +1,4 @@
-# Configurar o Cluster 
+# Configurar o Cluster
 
 A estrutura de implantação do sistema utiliza como base o Kubernetes e o Docker Engine.
 
@@ -17,7 +17,7 @@ A estrutura de implantação do sistema utiliza como base o Kubernetes e o Docke
 Este projeto conta com um script utilitário para a instalação das ferramentas `kind`, `kubectl` e `helm` no linux x64.
 
 ```sh
-./setup-cluster.sh
+./setup-environment.sh
 ```
 
 #### Docker
@@ -60,5 +60,3 @@ Para verificar instalação do helm:
 ```sh
 helm version
 ```
-
-
