@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quay
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quay
+  template:
+    metadata:
+      labels:
+        app: quay
+    spec:
+      volumes:
+        - name: app_storage
+          persistentVolumeClaim:
+            claimName: quay-app_storage-pvc
+        - name: app_config
+          persistentVolumeClaim:
+            claimName: quay-app_config-pvc
+        - name: app_log
+          persistentVolumeClaim:
+            claimName: quay-app_log-pvc
+        # - name: app_tmp
+        #   persistentVolumeClaim:
+        #     claimName: app_tmp-pvc
+      containers:
+        - name: quay
+          image: "quay.io/projectquay/quay:latest"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+          volumeMounts:
+            - name: app_storage
+              mountPath: /datastorage
+            - name: app_config
+              mountPath: /conf/stack
+            - name: app_log
+              mountPath: /var/log
+            # - name: app_tmp
+            #   mountPath: /tmp
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: "512Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quay
+  namespace: default
+  labels:
+    app: quay
+spec:
+  type: NodePort
+  selector:
+    app: quay
+  ports:
+    - port: 80
+    - port: 443

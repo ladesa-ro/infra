@@ -3,3 +3,4 @@
 set -xe;
 
 (cd ./proxy; ./deploy.sh);
+(cd ./registry; ./deploy.sh);

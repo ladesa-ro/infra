@@ -42,7 +42,7 @@ kubectl delete "$(kubectl api-resources --namespaced=true --verbs=delete -o name
 ```sh
 #!/bin/bash
 
-set +e
+set -e
 
 export CLUSTER_NAME=traefik
 export TRAEFIK_NAMESPACE=traefik
