@@ -12,11 +12,7 @@ Para facilitar este processo, é utilizado o [_Helm Chart_](https://helm.sh/docs
 
 - <https://github.com/traefik/traefik-helm-chart/#readme>
 
-Este projeto conta com um script para:
-
-- criar o namespace `traefik`;
-- implantar o traefik no cluster utilizando o helm;
-- iniciar um serviço `whoami` e utilziar o `Ingress Route` para integrar ao proxy.
+Este projeto conta com um script para implantar o traefik no cluster utilizando a ferramenta helm.
 
 ```sh
 ./deploy.sh

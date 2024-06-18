@@ -4,25 +4,12 @@
 
 Este projeto conta com os dados necessários para o levantamento da infraestrutura dos projetos do sistema.
 
-## Scripts de conveniência
-
-- [`deploy.sh`](./deploy.sh)
+## Hackeando
 
 ```sh
-./deploy.sh
+git clone https://github.com/ladesa-ro/infra.git;
+cd infra;
 ```
-
-- [`deploy-in-background.sh`](./deploy-in-background.sh)
-
-```sh
-./deploy-in-background.sh
-```
-
-## Github Actions
-
-- [`Deploy Services`](./.github/workflows/deploy.yml)
-
----
 
 ## Documentação
 
@@ -39,6 +26,30 @@ Este projeto conta com os dados necessários para o levantamento da infraestrutu
   - [api](./api)
   - [web](./web)
   - [gerar-horario](./gerar-horario)
+
+## Scripts de conveniência
+
+- [`cluster/ssetup.sh`](./cluster/setup.sh)
+
+```sh
+./cluster/setup.sh
+```
+
+- [`deploy.sh`](./deploy.sh)
+
+```sh
+./deploy.sh
+```
+
+- [`deploy-in-background.sh`](./deploy-in-background.sh)
+
+```sh
+./deploy-in-background.sh
+```
+
+## Github Actions
+
+- [`Deploy Services`](./.github/workflows/deploy.yml)
 
 ## Autores
 

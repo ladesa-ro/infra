@@ -4,15 +4,15 @@ A estrutura de implantação do sistema utiliza como base o Kubernetes e o Docke
 
 ## Tecnologias de Base
 
-- Docker Engine - <https://docs.docker.com/engine/>
-- Kubernetes - <https://kubernetes.io/docs/concepts/>
+- Docker Engine - <https://docs.docker.com/engine/>;
+- Kubernetes - <https://kubernetes.io/docs/concepts/>.
 
 ### Ferramentas
 
-- docker - <https://docs.docker.com/engine/>
-- kind - <https://kind.sigs.k8s.io/>
-- kubectl - <https://kubernetes.io/pt-br/docs/reference/kubectl/>
-- helm - <https://helm.sh/>
+- docker - <https://docs.docker.com/engine/>;
+- kind - <https://kind.sigs.k8s.io/>;
+- kubectl - <https://kubernetes.io/pt-br/docs/reference/kubectl/>;
+- helm - <https://helm.sh/>.
 
 Este projeto conta com um script utilitário para a instalação das ferramentas `kind`, `kubectl` e `helm` no linux x64.
 
