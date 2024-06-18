@@ -1,29 +1,29 @@
 # infra
 
-[![Deploy Services](https://github.com/ladesa-ro/infra/actions/workflows/deploy.yml/badge.svg)](https://github.com/ladesa-ro/infra/actions/workflows/deploy.yml)
+[![Deploy Services][action-deploy-services-badge]][action-deploy-services-href]
 
 Este projeto conta com os dados necessários para o levantamento da infraestrutura dos projetos do sistema.
 
 ## Hackeando
 
 ```sh
-git clone https://github.com/ladesa-ro/infra.git;
-cd infra;
+git clone https://github.com/ladesa-ro/infra.git
+cd infra
 ```
 
 ## Documentação
 
 Este projeto foi projetado e testado para rodar nos seguintes sistemas operacionais:
 
-- `Debian GNU/Linux 11 (bullseye)` 
+- [`Debian GNU/Linux 11 (bullseye)`][distro-debian-bullseye]
 
-  - `GNU/Linux - x86_64 @ 5.10.0-25-amd64`
-  - `GNU bash @ 5.1.4`
+  - Shell: `GNU bash @ 5.1.4`
+  - Kernel: `GNU/Linux - x86_64 @ 5.10.0-25-amd64`
 
-- `Manjaro Linux 24.0.2`
+- [`Manjaro Linux 24.0.2`][distro-manjaro-wynsdey]
 
-  - `GNU/Linux - x86_64 @ 6.6.33-1-MANJARO`
-  - `zsh @ 5.9`
+  - Shell: `GNU bash @ 5.2.26`
+  - Kernel: `GNU/Linux - x86_64 @ 6.6.33-1-MANJARO`
 
 A seguir, estão documentadas as implantações de cada pedaço do sistema. Note que a configuração do cluster deve ser feita uma vez, enquanto o deploy dos serviços serão recorrentes.
 
@@ -40,6 +40,10 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
   - [api](./api)
   - [web](./web)
   - [gerar-horario](./gerar-horario)
+
+## Github Actions
+
+- [`Deploy Services`](./.github/workflows/deploy.yml)
 
 ## Scripts de conveniência
 
@@ -61,10 +65,18 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 ./deploy-in-background.sh
 ```
 
-## Github Actions
-
-- [`Deploy Services`](./.github/workflows/deploy.yml)
-
 ## Autores
 
 - Gabriel R. Antunes, [guesant@github](https://github.com/guesant), <gabrielrodantunes@gmail.com>.
+
+<!-- Links -->
+
+<!-- Links / Actions -->
+
+[action-deploy-services-badge]: https://github.com/ladesa-ro/infra/actions/workflows/deploy.yml/badge.svg
+[action-deploy-services-href]: https://github.com/ladesa-ro/infra/actions/workflows/deploy.yml
+
+<!-- Links / Distros -->
+
+[distro-debian-bullseye]: https://www.debian.org/releases/bullseye/
+[distro-manjaro-wynsdey]: https://forum.manjaro.org/t/manjaro-24-0-wynsdey-released/161527
