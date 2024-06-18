@@ -29,9 +29,9 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 
 - [cluster/README.md](./cluster/README.md)
 
-  - [00-setup-environment/README.md](./00-setup-environment/README.md)
-  - [01-init-kubernetes-kind-cluster/README.md](./01-init-kubernetes-kind-cluster/README.md)
-  - [02-setup-k8s-traefik-integration/README.md](./02-setup-k8s-traefik-integration/README.md)
+  - [00-setup-environment/README.md](./cluster/00-setup-environment/README.md)
+  - [01-init-kubernetes-kind-cluster/README.md](./cluster/01-init-kubernetes-kind-cluster/README.md)
+  - [02-setup-k8s-traefik-integration/README.md](./cluster/02-setup-k8s-traefik-integration/README.md)
 
 - [services](./services)
   - [proxy/README.md](./services/proxy/README.md)
