@@ -13,6 +13,18 @@ cd infra;
 
 ## Documentação
 
+Este projeto foi projetado e testado para rodar nos seguintes sistemas operacionais:
+
+- `Debian GNU/Linux 11 (bullseye)` - `GNU/Linux - x86_64 - 5.10.0-25-amd64`
+
+  - `GNU bash @ 5.1.4`
+
+- `Manjaro Linux 24.0.2` - `GNU/Linux - x86_64 - 6.6.33-1-MANJARO`
+
+  - `zsh @ 5.9`
+
+A seguir, estão documentadas as implantações de cada pedaço do sistema. Note que a configuração do cluster deve ser feita uma vez, enquanto o deploy dos serviços serão recorrentes.
+
 - [cluster/README.md](./cluster/README.md)
 
   - [00-setup-environment/README.md](./00-setup-environment/README.md)
