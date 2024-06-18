@@ -1,5 +1,7 @@
 additionalArguments:
-  - --api.insecure
+  - --api.insecure=true
+  - --entrypoints.web.address=:80
+  - --entrypoints.websecure.address=:443
 
 nodeSelector:
   ingress-ready: "true"
@@ -57,10 +59,14 @@ ports:
   # Configure your entrypoints here...
   web:
     port: 80
-    # (optional) Permanent Redirect to HTTPS
-    # redirectTo:
-    #   port: websecure
+
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
   websecure:
+    port: 443
     tls:
       enabled: true
       # (optional) Set a Default CertResolver

@@ -1,5 +1,13 @@
 # Configuração
 
+Configure a extensão "pg_trgm" no banco de dados postgres:
+
+```sh
+psql
+\c quay
+CREATE EXTENSION pg_trgm;
+```
+
 ```sh
 make setup;
 ```

@@ -6,6 +6,7 @@ metadata:
 spec:
   entryPoints:
     - web
+    - websecure
   routes:
     - kind: Rule
       match: (Host("registry.kluster.local")) || (Host("registry.ladesa.com.br")) || PathPrefix(`/`)
