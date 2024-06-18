@@ -2,8 +2,8 @@
 
 O cluster precisa ser configurado para ter os mapeamentos extra de portas:
 
-- host `:3080` -> ingress `:80`
-- host `:3443` -> ingress `:443`
+- host `:80` -> ingress controller `:80`
+- host `:443` -> ingress controller `:443`
 
 Além disso, o control plane é configurado com a label `ingress-ready=true` para facilitar a configuração do ingress.
 

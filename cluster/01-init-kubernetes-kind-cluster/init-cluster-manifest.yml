@@ -13,11 +13,11 @@ nodes:
             node-labels: "ingress-ready=true,x-ladesa-infra-host=yes"
     extraPortMappings:
       - containerPort: 80
-        hostPort: 3080 # TODO: change to 80 when ready
+        hostPort: 80
         protocol: TCP
         listenAddress: "0.0.0.0"
       - containerPort: 443
-        hostPort: 3443 # TODO: change to 443 when ready
+        hostPort: 443
         protocol: TCP
     extraMounts:
       - hostPath: /var/lib/ladesa-ro/infra/storage
