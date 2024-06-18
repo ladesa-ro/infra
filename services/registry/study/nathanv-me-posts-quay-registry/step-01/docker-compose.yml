@@ -1,8 +1,0 @@
-services:
-  config:
-    command: config secret
-    image: quay.io/projectquay/quay:latest
-    ports:
-      - 8080:8080
-    volumes:
-      - ./v/app_config:/conf/stack
