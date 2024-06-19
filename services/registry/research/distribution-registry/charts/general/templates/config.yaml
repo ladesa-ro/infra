@@ -1,0 +1,12 @@
+{{- range .Values.config }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .name }}
+data: 
+{{- range .data }}
+  {{ .key }}: "{{ .value }}"
+{{- end}}
+---
+{{- end}}

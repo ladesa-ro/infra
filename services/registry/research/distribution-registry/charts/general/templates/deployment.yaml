@@ -1,0 +1,125 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "general.fullname" . }}
+  labels:
+    {{- include "general.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "general.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "general.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "general.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      
+      {{- if .Values.volumePermissions.enabled }}
+
+      initContainers:
+        - name: volume-permissions
+          image: {{ .Values.volumePermissions.image }}
+          imagePullPolicy: {{ .Values.volumePermissions.imagePullPolicy }}
+          command:
+            - /bin/bash
+            - -ec
+            - |
+                chown -R {{ .Values.securityContext.runAsUser }}:{{ .Values.podSecurityContext.fsGroup }} {{ .Values.volumePermissions.path }} && chmod -R 777 {{ .Values.volumePermissions.path }}
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+            - name: {{ .Values.volumePermissions.volumeName }}
+              mountPath: {{ .Values.volumePermissions.path }}
+
+      {{- end }}
+      
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            {{- range .Values.config }}
+            - configMapRef:
+                name: {{ .name }}
+            {{- end}}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.containerPort }}
+              protocol: TCP
+          {{- if .Values.command.enabled }}
+          command:
+          {{- toYaml .Values.command.cmd | nindent 12 }}
+          {{- end}}
+          {{- if .Values.probe.enabled }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.probe.path }}
+              port: {{ .Values.service.containerPort }}
+          readinessProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.service.containerPort }}
+          {{- end}}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          
+          {{- if .Values.pvc.enabled }}
+          volumeMounts:
+            {{- range .Values.pvc.config }}
+            - name: {{ .name }}-data
+              mountPath: {{ .mount.path }}
+            {{- end }}
+            {{- if .Values.envconf.enabled }}
+            {{- range .Values.envconf.config }}
+            - name: {{ .name }}-envconfig-data
+              mountPath: {{ .mountPath }}/{{ .subPath }}
+              subPath: {{ .subPath }}
+            {{- end }}
+            {{- end }}
+          {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.pvc.enabled }}
+      volumes:
+        {{- range .Values.pvc.config }}
+        - name: {{ .name }}-data
+          persistentVolumeClaim:
+            claimName: {{ .name }}-pvc
+        {{- end }}
+        {{- if .Values.envconf.enabled }}
+        {{- range .Values.envconf.config }}
+        - name: {{ .name }}-envconfig-data
+          configMap:
+            name: {{ .target }}
+            items:
+              - key: {{ .key }}
+                path: {{ .subPath }}
+        {{- end }}
+        {{- end }}
+      {{- end}}

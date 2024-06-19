@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: registry-artifacts-pv
+  namespace: default
+  labels:
+    app: registry
+spec:
+  volumeMode: Filesystem
+  hostPath:
+    path: /mnt/storage/registry/storage
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  claimRef:
+    namespace: default
+    name: registry-artifacts-pvc
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: x-ladesa-infra-host
+              operator: In
+              values:
+                - "yes"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: registry-artifacts-pvc
+  namespace: default
+  labels:
+    app: registry
+spec:
+  storageClassName: manual
+  volumeName: registry-artifacts-pv
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 20Gi
