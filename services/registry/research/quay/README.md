@@ -1,10 +1,12 @@
 # registry
 
-WORK IN PROGRESS.
+## Configuração
+
+Veja [setup/README.md](./setup/README.md).
 
 ## Deploy
 
-Este projeto conta com um script para implantar um registry de containers no cluster.
+Este projeto conta com um script para implantar o quay no cluster.
 
 ```sh
 ./deploy.sh
