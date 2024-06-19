@@ -20,6 +20,9 @@ spec:
         - name: registry-certs-vol
           persistentVolumeClaim:
             claimName: registry-certs-pvc
+        - name: registry-config-map-vol
+          configMap:
+            name: registry-config-map
       containers:
         - name: registry
           image: "registry:2"
@@ -32,9 +35,9 @@ spec:
               mountPath: /data
             - name: registry-certs-vol
               mountPath: /opt/certs
-          envFrom:
-            - configMapRef:
-                name: registry-config-map
+            - name: registry-config-map-vol
+              mountPath: /etc/docker/registry/config.yml
+              subPath: registry-config.yaml
           resources:
             limits:
               cpu: "0.5"
