@@ -25,7 +25,6 @@ spec:
               operator: In
               values:
                 - "yes"
-
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

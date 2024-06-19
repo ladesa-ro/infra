@@ -10,16 +10,8 @@ Este projeto conta com um script para implantar um registry de containers no clu
 ./deploy.sh
 ```
 
-## Acessar registry local
-
-`/etc/docker/daemon.json`:
-
-```json
-{
-  "insecure-registries": ["registry.kluster.local", "registry.kluster.local:80"]
-}
-```
+## Garbage Collector
 
 ```sh
-systemctl restart docker
+kubectl exec --tty --stdin $(kubectl get pods --selector "app=registry" --output=name) -n default -- registry garbage-collect /etc/docker/registry/config.yml --delete-untagged=true
 ```
