@@ -7,6 +7,15 @@ mkdir -p /tmp/cluster-setup;
 cd /tmp/cluster-setup;
 
 echo  ================================================================
+echo "Installing docker"
+echo  ================================================================
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh ./get-docker.sh
+
+docker version;
+
+echo  ================================================================
 echo "Installing kind"
 echo  ================================================================
 

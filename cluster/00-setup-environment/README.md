@@ -14,7 +14,7 @@ A estrutura de implantação do sistema utiliza como base o Kubernetes e o Docke
 - kubectl - <https://kubernetes.io/pt-br/docs/reference/kubectl/>;
 - helm - <https://helm.sh/>.
 
-Este projeto conta com um script utilitário para a instalação das ferramentas `kind`, `kubectl` e `helm` no linux x64.
+Este projeto conta com um script utilitário para a instalação das ferramentas `docker`, `kind`, `kubectl` e `helm` no linux x64.
 
 ```sh
 ./setup-environment.sh
