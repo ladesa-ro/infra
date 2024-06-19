@@ -2,4 +2,7 @@
 
 set -xe
 
-helm upgrade --install traefik traefik/traefik --namespace=traefik --values traefik-helm-custom-values.yml;
+kubectl wait --namespace ingress-nginx \
+  --for=condition=ready pod \
+  --selector=app.kubernetes.io/component=controller \
+  --timeout=90s

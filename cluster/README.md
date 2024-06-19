@@ -8,6 +8,6 @@ Veja: [00-setup-environment/README.md](./00-setup-environment/README.md).
 
 Veja: [01-init-kubernetes-kind-cluster/README.md](./01-init-kubernetes-kind-cluster/README.md).
 
-## 02-setup-k8s-traefik-integration
+## 02-setup-ingress-controller
 
-Veja: [02-setup-k8s-traefik-integration/README.md](./02-setup-k8s-traefik-integration/README.md).
+Veja: [02-setup-ingress-controller/README.md](./02-setup-ingress-controller/README.md).

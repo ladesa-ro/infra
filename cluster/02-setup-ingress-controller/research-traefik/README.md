@@ -10,8 +10,8 @@ Além disso, a configuração do traefik como proxy e ingress controller é feit
 
 ---
 
-Este projeto conta com um [script utilitário](./setup-k8s-traefik-integration.sh) para a integraçãdo do traefik ao kubernetes que configura as CRDs e adiciona o repositório `traefik` à instação local do helm:
+Este projeto conta com um [script utilitário](./setup-ingress-controller.sh) para a integraçãdo do traefik ao kubernetes que configura as CRDs e adiciona o repositório `traefik` à instação local do helm:
 
 ```sh
-./setup-k8s-traefik-integration.sh
+./setup-ingress-controller.sh
 ```
