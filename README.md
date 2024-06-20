@@ -13,7 +13,7 @@ git clone https://github.com/ladesa-ro/infra.git
 cd infra
 ```
 
-## Sistemas Operacionais Suportados
+### Sistemas Operacionais Suportados
 
 Este projeto foi projetado e testado para rodar nos seguintes sistemas operacionais:
 
@@ -26,6 +26,8 @@ Este projeto foi projetado e testado para rodar nos seguintes sistemas operacion
 
   - Shell: `GNU bash @ 5.2.26`
   - Kernel: `GNU/Linux - x86_64 @ 6.6.33-1-MANJARO`
+
+## Etapas para a implantação do sistema 
 
 A seguir, estão documentadas as implantações de cada pedaço do sistema. Note que a configuração do cluster deve ser feita uma vez, enquanto o deploy dos serviços serão recorrentes.
 
