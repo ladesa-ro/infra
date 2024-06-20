@@ -7,4 +7,4 @@ resources:
 namespace: ladesa-ro-local
 
 patches:
-  - path: volume-storage-service-api-db-pv.yaml
+  - path: pv.yaml
