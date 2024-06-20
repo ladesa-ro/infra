@@ -74,7 +74,7 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 
 ## 05. Container Registry
 
-- [05-registry/README.md](./04-registry/README.md)
+- [05-registry/README.md](./05-registry/README.md)
 
 ## 06. Serviços
 
