@@ -1,3 +1,3 @@
 resources:
-  - volume-storage-service-api-uploaded-pv.yaml
-  - volume-storage-service-api-uploaded-pvc.yaml
+  - pv.yaml
+  - pvc.yaml

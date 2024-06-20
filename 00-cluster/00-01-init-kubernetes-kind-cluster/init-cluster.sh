@@ -2,12 +2,9 @@
 
 set -xe
 
-if [[ ! "${LADESA_DEPLOY_SETUP_CLUSTER_INIT}" == "true" ]]; then
+if [[ ! "$(kind create cluster --config=./init-cluster-manifest.yml; echo $?)" == "0" ]]; then
+  echo "Cluster already exists";
   exit 0;
-fi
-
-kind delete cluster;
-
-kind create cluster --config=./init-cluster-manifest.yml;
+fi;
 
 (kubectl taint nodes --all node-role.kubernetes.io/control-plane- || exit 0);
