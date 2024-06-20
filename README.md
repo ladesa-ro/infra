@@ -27,19 +27,35 @@ Este projeto foi projetado e testado para rodar nos seguintes sistemas operacion
 
 A seguir, estão documentadas as implantações de cada pedaço do sistema. Note que a configuração do cluster deve ser feita uma vez, enquanto o deploy dos serviços serão recorrentes.
 
-- [cluster/README.md](./cluster/README.md)
+- [00-cluster/README.md](./00-cluster/README.md)
 
-  - [00-setup-environment/README.md](./cluster/00-setup-environment/README.md)
-  - [01-init-kubernetes-kind-cluster/README.md](./cluster/01-init-kubernetes-kind-cluster/README.md)
-  - [02-setup-ingress-controller/README.md](./cluster/02-setup-ingress-controller/README.md)
+  - [00-00-setup-environment/README.md](./00-cluster/00-00-setup-environment/README.md)
+  - [00-01-init-kubernetes-kind-cluster/README.md](./00-cluster/00-01-init-kubernetes-kind-cluster/README.md)
+  - [00-02-setup-ingress-controller/README.md](./00-cluster/00-02-setup-ingress-controller/README.md)
+  - [00-03-project-namespaces/README.md](./00-cluster/00-03-project-namespaces/README.md)
 
-- [services](./services)
-  - [proxy/README.md](./services/proxy/README.md)
-  - [registry/README.md](./services/registry/README.md)
-  - [api/README.md](./services/api/README.md)
-  - [web/README.md](./services/web/README.md)
-  - [sso](./services/sso)
-  - [gerar-horario](./services/gerar-horario)
+- [01-storages/README.md](./01-storages/README.md)
+
+  - [services/README.md](./01-storages/services/README.md)
+    - [registry/README.md](./01-storages/services/registry/README.md)
+
+- [02-config/README.md](./02-config/README.md)
+
+  - [services/README.md](./02-config/services/README.md)
+    - [registry/README.md](./02-config/services/registry/README.md)
+
+- [03-databases/README.md](./03-databases/README.md)
+
+- [04-proxy/README.md](./04-proxy/README.md)
+
+- [05-registry/README.md](./04-registry/README.md)
+
+- [06-services](./06-services)
+  - [06-00-rabbitmq/README.md](./06-services/06-00-rabbitmq/README.md)
+  - [06-01-sso/README.md](./06-services/06-01-sso/README.md)
+  - [06-02-gerar-horario/README.md](./06-services/06-02-gerar-horario/README.md)
+  - [06-03-api/README.md](./06-services/06-03-api/README.md)
+  - [06-04-web/README.md](./06-services/06-04-web/README.md)
 
 ## Github Actions
 
@@ -47,10 +63,10 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 
 ## Scripts de conveniência
 
-- [`cluster/setup.sh`](./cluster/setup.sh)
+- [`cluster/setup.sh`](./00-cluster/setup.sh)
 
 ```sh
-./cluster/setup.sh
+./00-cluster/setup.sh
 ```
 
 - [`deploy.sh`](./deploy.sh)
