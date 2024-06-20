@@ -2,4 +2,6 @@
 
 set -xe
 
-(cd ./services; ./deploy.sh);
+(cd ./config-registry; ./deploy.sh);
+(cd ./config-service-api-db; ./deploy.sh);
+(cd ./config-service-sso-db; ./deploy.sh);

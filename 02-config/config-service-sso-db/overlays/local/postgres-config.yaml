@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ladesa-ro-sso-db-secret
+type: Opaque
+data:
+  POSTGRES_USER: cXVheQ==
+  POSTGRES_PASSWORD: YjY5MDY4ZThiNGViMjA1YmM3YTBlMGMxZmMzY2E4ZmIzYjQyY2Y2YWEwYmM3OWY1
+  POSTGRES_DB: cmVnaXN0cnk=

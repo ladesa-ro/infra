@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sso-db-pvc
-  namespace: default
+  name: ladesa-ro-sso-db-pvc
   labels:
-    app: registry
+    app: ladesa-ro-sso
 spec:
   storageClassName: manual
-  volumeName: sso-db-pv
+  volumeName: ladesa-ro-sso-db-pv
   accessModes:
     - ReadWriteOnce
   resources:

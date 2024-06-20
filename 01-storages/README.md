@@ -1,9 +1,12 @@
 # Armazenamentos
 
-## Estrutura
+## Volumes
 
-- [`services/README.md`](./services/README.md)
-  - [`registry/README.md`](./services/registry/README.md)
+- [storage-registry-artifacts](./storage-registry-artifacts)
+- [storage-service-api-db](./storage-service-api-db)
+- [storage-service-sso-db](./storage-service-sso-db)
+- [storage-registry-certs](./storage-registry-certs)
+- [storage-service-api-uploaded](./storage-service-api-uploaded)
 
 ## Deploy
 

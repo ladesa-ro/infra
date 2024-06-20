@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ladesa-ro-sso-db-pv
+spec:
+  volumeMode: Filesystem
+  hostPath:
+    path: /mnt/storage/service/sso/development/db/data

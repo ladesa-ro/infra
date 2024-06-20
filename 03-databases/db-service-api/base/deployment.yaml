@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ladesa-ro-api-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ladesa-ro-api-db
+  template:
+    metadata:
+      labels:
+        app: ladesa-ro-api-db
+    spec:
+      volumes:
+        - name: postgresdata
+          persistentVolumeClaim:
+            claimName: ladesa-ro-api-db-pvc
+      containers:
+        - name: ladesa-ro-api-db
+          image: "postgres:15"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5432
+          envFrom:
+            # - configMapRef:
+            #     name: ladesa-ro-api-db-config
+            - secretRef:
+                name: ladesa-ro-api-db-secret
+          volumeMounts:
+            - name: postgresdata
+              mountPath: /var/lib/postgresql/data
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: "512Mi"

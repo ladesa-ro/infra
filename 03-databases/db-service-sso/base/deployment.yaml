@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ladesa-ro-sso-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ladesa-ro-sso-db
+  template:
+    metadata:
+      labels:
+        app: ladesa-ro-sso-db
+    spec:
+      volumes:
+        - name: postgresdata
+          persistentVolumeClaim:
+            claimName: ladesa-ro-sso-db-pvc
+      containers:
+        - name: ladesa-ro-sso-db
+          image: "postgres:15"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5432
+          envFrom:
+            # - configMapRef:
+            #     name: ladesa-ro-sso-db-config
+            - secretRef:
+                name: ladesa-ro-sso-db-secret
+          volumeMounts:
+            - name: postgresdata
+              mountPath: /var/lib/postgresql/data
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: "512Mi"

@@ -1,21 +1,19 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: sso-db-pv
-  namespace: default
+  name: ladesa-ro-sso-db-pv
   labels:
-    app: registry
+    app: ladesa-ro-sso
 spec:
   volumeMode: Filesystem
   hostPath:
-    path: /mnt/storage/sso/db/data
+    path: /dev/null
   capacity:
     storage: 2Gi
   accessModes:
     - ReadWriteMany
   claimRef:
-    namespace: default
-    name: sso-db-pvc
+    name: ladesa-ro-sso-db-pvc
   persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
