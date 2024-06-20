@@ -1,0 +1,14 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+
+commonLabels:
+  app: ladesaro-web
+
+commonAnnotations:
+  app: ladesaro-web-annotations
+
+namePrefix: ladesaro-web-
+
+nameSuffix: -v1

@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
         - name: ladesaro-api
-          image: "registry.ladesa.com.br/web:development"
+          image: "registry.ladesa.com.br/api:development"

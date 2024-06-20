@@ -37,8 +37,8 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
   - [proxy/README.md](./services/proxy/README.md)
   - [registry/README.md](./services/registry/README.md)
   - [api/README.md](./services/api/README.md)
+  - [web/README.md](./services/web/README.md)
   - [sso](./services/sso)
-  - [web](./services/web)
   - [gerar-horario](./services/gerar-horario)
 
 ## Github Actions

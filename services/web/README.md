@@ -1,5 +1,11 @@
-# @ladesa-ro/web
+# web
 
 Aplicação Web.
 
-TBD.
+## Deploy
+
+Este projeto conta com um [script](./deploy.sh) para implantar a api nos ambientes `development` e `production`.
+
+```sh
+./deploy.sh
+```
