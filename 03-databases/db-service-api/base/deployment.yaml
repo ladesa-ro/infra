@@ -23,10 +23,8 @@ spec:
           ports:
             - containerPort: 5432
           envFrom:
-            # - configMapRef:
-            #     name: ladesa-ro-api-db-config
             - secretRef:
-                name: ladesa-ro-api-db-secret
+                name: ladesa-ro-api-db-config
           volumeMounts:
             - name: postgresdata
               mountPath: /var/lib/postgresql/data

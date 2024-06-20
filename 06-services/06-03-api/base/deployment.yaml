@@ -21,12 +21,11 @@ spec:
           image: "nginx:1"
           imagePullPolicy: Always
           ports:
-            # - containerPort: 3000
             - name: web
               containerPort: 80
-          # envFrom:
-          #   - configMapRef:
-          #       name: ladesa-ro-api-configmap
+          envFrom:
+            - secretRef:
+                name: ladesa-ro-api-config
           resources:
             requests:
               cpu: "50m"

@@ -27,7 +27,7 @@ Este projeto foi projetado e testado para rodar nos seguintes sistemas operacion
   - Shell: `GNU bash @ 5.2.26`
   - Kernel: `GNU/Linux - x86_64 @ 6.6.33-1-MANJARO`
 
-## Etapas para a implantação do sistema 
+## Etapas para a implantação do sistema
 
 A seguir, estão documentadas as implantações de cada pedaço do sistema. Note que a configuração do cluster deve ser feita uma vez, enquanto o deploy dos serviços serão recorrentes.
 
@@ -55,8 +55,11 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 - [02-config/README.md](./02-config/README.md)
 
   - [config-registry](./02-config/config-registry)
+  - [config-service-api](./02-config/config-service-api)
   - [config-service-api-db](./02-config/config-service-api-db)
+  - [config-service-sso](./02-config/config-service-sso)
   - [config-service-sso-db](./02-config/config-service-sso-db)
+  - [config-service-web](./02-config/config-service-web)
 
 ### 03. Bancos de Dados
 
