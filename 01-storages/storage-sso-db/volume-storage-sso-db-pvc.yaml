@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sso-db-pvc
+  namespace: default
+  labels:
+    app: registry
+spec:
+  storageClassName: manual
+  volumeName: sso-db-pv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi

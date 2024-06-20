@@ -1,0 +1,3 @@
+resources:
+  - volume-storage-service-api-db-pv.yaml
+  - volume-storage-service-api-db-pvc.yaml

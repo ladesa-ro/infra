@@ -2,6 +2,10 @@
 
 set -xe
 
+if [[ ! "${LADESA_DEPLOY_SETUP_CLUSTER_ENVIRONMENT}" == "true" ]]; then
+  exit 0;
+fi
+
 TMP_SETUP_PATH=/tmp/cluster-setup
 
 rm -rf ${TMP_SETUP_PATH};
