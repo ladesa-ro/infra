@@ -1,30 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ladesaro-api
+  name: ladesa-ro-api
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      name: ladesaro-api
+      name: ladesa-ro-api
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
   template:
     metadata:
       labels:
-        name: ladesaro-api
-    strategy:
-      type: RollingUpdate
-      rollingUpdate:
-        maxSurge: 1
-        maxUnavailable: 0
+        name: ladesa-ro-api
     spec:
       containers:
-        - name: ladesaro-api
-          image: "registry.ladesa.com.br/api"
+        - name: ladesa-ro-api
+          image: "nginx:1"
+          imagePullPolicy: Always
           ports:
-            - containerPort: 3000
-          envFrom:
-            - configMapRef:
-                name: ladesaro-api-configmap
+            # - containerPort: 3000
+            - name: web
+              containerPort: 80
+          # envFrom:
+          #   - configMapRef:
+          #       name: ladesa-ro-api-configmap
           resources:
             requests:
               cpu: "50m"

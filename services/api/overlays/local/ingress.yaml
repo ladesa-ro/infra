@@ -4,7 +4,7 @@ metadata:
   name: ladesa-ro-api-ingress
 spec:
   rules:
-    - host: "ladesa.com.br"
+    - host: "ing.kluster.local"
       http:
         paths:
           - path: /api/

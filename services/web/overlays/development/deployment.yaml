@@ -1,11 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ladesaro-web
+  name: ladesa-ro-web
 spec:
   replicas: 1
   template:
     spec:
       containers:
-        - name: ladesaro-web
-          image: "registry.ladesa.com.br/web:development"
+        - name: ladesa-ro-web
+          # image: "registry.ladesa.com.br/api:development"
+          image: "traefik/whoami"

@@ -1,14 +1,12 @@
 resources:
   - deployment.yaml
   - service.yaml
-  - ingress.yaml
 
 commonLabels:
-  app: ladesaro-web
+  app: ladesa-ro-web
 
 commonAnnotations:
-  app: ladesaro-web-annotations
-
-namePrefix: ladesaro-web-
-
-nameSuffix: -v1
+  app: ladesa-ro-web-annotations
+#
+# namePrefix: ladesa-ro-web-
+# nameSuffix: -v1

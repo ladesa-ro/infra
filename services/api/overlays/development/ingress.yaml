@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ladesaro-api-ingress
+  name: ladesa-ro-api-ingress
 spec:
   rules:
-    - host: ["dev.api.ladesa.com.br", "dev.api.kluster.local"]
+    - host: "dev.ladesa.com.br"
       http:
         paths:
-          - path: /
-            pathType: Prefix
+          - path: /api/
+            pathType: ImplementationSpecific
             backend:
               service:
-                name: ladesaro-api
+                name: ladesa-ro-api
                 port:
                   name: web
