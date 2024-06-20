@@ -1,0 +1,12 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+
+commonLabels:
+  app: ladesa-ro-sso
+
+commonAnnotations:
+  app: ladesa-ro-sso-annotations
+#
+# namePrefix: ladesa-ro-sso-
+# nameSuffix: -v1

@@ -1,5 +1,11 @@
 # Single Sign-On
 
-Microsserviço Single Sign-On.
+Microsserviço de Autenticação.
 
-TBD.
+## Deploy
+
+Este projeto conta com um [script](./deploy.sh) para implantar o `sso`.
+
+```sh
+./deploy.sh
+```

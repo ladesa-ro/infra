@@ -1,5 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-set -xe;
+set -xe
 
-exit 0;
+(cd overlays/local/scripts; ./deploy.sh);
+(cd overlays/development/scripts; ./deploy.sh);
+(cd overlays/production/scripts; ./deploy.sh);
