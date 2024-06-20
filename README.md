@@ -1,10 +1,10 @@
-# infra
+# Infraestrutura
 
 [![Deploy Services][action-deploy-services-badge]][action-deploy-services-href]
 
 Este projeto conta com os dados necessários para o levantamento da infraestrutura dos projetos do sistema.
 
-## Configuração Local
+## Documentação
 
 ### Obter código do repositório
 
@@ -12,8 +12,6 @@ Este projeto conta com os dados necessários para o levantamento da infraestrutu
 git clone https://github.com/ladesa-ro/infra.git
 cd infra
 ```
-
-## Documentação
 
 Este projeto foi projetado e testado para rodar nos seguintes sistemas operacionais:
 
@@ -86,7 +84,7 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 
 ## Scripts de conveniência
 
-- [`cluster/setup.sh`](./00-cluster/setup.sh)
+- [`00-cluster/setup.sh`](./00-cluster/setup.sh)
 
 ```sh
 ./00-cluster/setup.sh
