@@ -3,6 +3,8 @@
 ## Ambiente Local
 
 ```sh
+cp -n api.env.example api.local.env
+
 kubectl create secret generic \
   ladesa-ro-api-config \
   --namespace=ladesa-ro-local
@@ -13,6 +15,8 @@ kubectl create secret generic \
 ## Ambiente de Desenvolvimento
 
 ```sh
+cp -n api.env.example api.dev.env
+
 kubectl create secret generic \
   ladesa-ro-api-config \
   --namespace=ladesa-ro-development
@@ -23,6 +27,8 @@ kubectl create secret generic \
 ## Ambiente de Produção
 
 ```sh
+cp -n api.env.example api.prod.env
+
 kubectl create secret generic \
   ladesa-ro-api-config \
   --namespace=ladesa-ro-production
