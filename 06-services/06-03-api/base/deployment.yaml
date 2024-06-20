@@ -16,6 +16,10 @@ spec:
       labels:
         name: ladesa-ro-api
     spec:
+      volumes:
+        - name: uploaded-data
+          persistentVolumeClaim:
+            claimName: ladesa-ro-api-uploaded-pvc
       containers:
         - name: ladesa-ro-api
           image: "nginx:1"
@@ -26,6 +30,9 @@ spec:
           envFrom:
             - secretRef:
                 name: ladesa-ro-api-config
+          volumeMounts:
+            - name: uploaded-data
+              mountPath: /var/lib/ladesa-ro-api/uploaded
           resources:
             requests:
               cpu: "50m"
