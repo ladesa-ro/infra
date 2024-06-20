@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ladesaro-api-ingress
+spec:
+  rules:
+    - host: ["api.ladesa.com.br", "api.kluster.local"]
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ladesaro-api
+                port:
+                  name: web

@@ -36,8 +36,8 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 - [services](./services)
   - [proxy/README.md](./services/proxy/README.md)
   - [registry/README.md](./services/registry/README.md)
+  - [api/README.md](./services/api/README.md)
   - [sso](./services/sso)
-  - [api](./services/api)
   - [web](./services/web)
   - [gerar-horario](./services/gerar-horario)
 

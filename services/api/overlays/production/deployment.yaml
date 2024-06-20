@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ladesaro-api
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: ladesaro-api
+          image: "registry.ladesa.com.br/web:production"
