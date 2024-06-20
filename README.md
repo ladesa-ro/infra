@@ -13,6 +13,8 @@ git clone https://github.com/ladesa-ro/infra.git
 cd infra
 ```
 
+## Sistemas Operacionais Suportados
+
 Este projeto foi projetado e testado para rodar nos seguintes sistemas operacionais:
 
 - [`Debian GNU/Linux 11 (bullseye)`][distro-debian-bullseye]
