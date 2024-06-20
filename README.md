@@ -4,7 +4,9 @@
 
 Este projeto conta com os dados necessários para o levantamento da infraestrutura dos projetos do sistema.
 
-## Hackeando
+## Configuração Local
+
+### Obter código do repositório
 
 ```sh
 git clone https://github.com/ladesa-ro/infra.git
@@ -27,6 +29,8 @@ Este projeto foi projetado e testado para rodar nos seguintes sistemas operacion
 
 A seguir, estão documentadas as implantações de cada pedaço do sistema. Note que a configuração do cluster deve ser feita uma vez, enquanto o deploy dos serviços serão recorrentes.
 
+### 00. Configuração do Cluster
+
 - [00-cluster/README.md](./00-cluster/README.md)
 
   - [00-00-setup-environment/README.md](./00-cluster/00-00-setup-environment/README.md)
@@ -34,21 +38,40 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
   - [00-02-setup-ingress-controller/README.md](./00-cluster/00-02-setup-ingress-controller/README.md)
   - [00-03-project-namespaces/README.md](./00-cluster/00-03-project-namespaces/README.md)
 
+### 01. Volumes
+
 - [01-storages/README.md](./01-storages/README.md)
 
-  - [services/README.md](./01-storages/services/README.md)
-    - [registry/README.md](./01-storages/services/registry/README.md)
+  - [storage-registry-artifacts](./01-storages/storage-registry-artifacts)
+  - [storage-registry-certs](./01-storages/storage-registry-certs)
+  - [storage-service-api-uploaded](./01-storages/storage-service-api-uploaded)
+  - [storage-service-api-db](./01-storages/storage-service-api-db)
+  - [storage-service-sso-db](./01-storages/storage-service-sso-db)
+
+### 02. Configurações dos Sistemas
 
 - [02-config/README.md](./02-config/README.md)
 
-  - [services/README.md](./02-config/services/README.md)
-    - [registry/README.md](./02-config/services/registry/README.md)
+  - [config-registry](./02-config/config-registry)
+  - [config-service-api-db](./02-config/config-service-api-db)
+  - [config-service-sso-db](./02-config/config-service-sso-db)
+
+### 03. Bancos de Dados
 
 - [03-databases/README.md](./03-databases/README.md)
 
+  - [db-service-api](./03-databases/db-service-api)
+  - [db-service-sso](./03-databases/db-service-sso)
+
+## 04. Proxy Reverso / API Gateway / Ingress Controller
+
 - [04-proxy/README.md](./04-proxy/README.md)
 
+## 05. Container Registry
+
 - [05-registry/README.md](./04-registry/README.md)
+
+## 06. Serviços
 
 - [06-services](./06-services)
   - [06-00-rabbitmq/README.md](./06-services/06-00-rabbitmq/README.md)

@@ -19,6 +19,7 @@ nodes:
       - containerPort: 443
         hostPort: 443
         protocol: TCP
+        listenAddress: "0.0.0.0"
     extraMounts:
       - hostPath: /var/lib/ladesa-ro/infra/storage
         containerPath: /mnt/storage
