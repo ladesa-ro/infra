@@ -26,60 +26,8 @@ storage:
   filesystem:
     rootdirectory: /data
     maxthreads: 100
-  #   azure:
-  #     accountname: accountname
-  #     accountkey: base64encodedaccountkey
-  #     container: containername
-  #     rootdirectory: /az/object/name/prefix
-  #     credentials:
-  #       type: client_secret
-  #       clientid: client_id_string
-  #       tenantid: tenant_id_string
-  #       secret: secret_string
-  #     copy_status_poll_max_retry: 10
-  #     copy_status_poll_delay: 100ms
-  #   gcs:
-  #     bucket: bucketname
-  #     keyfile: /path/to/keyfile
-  #     credentials:
-  #       type: service_account
-  #       project_id: project_id_string
-  #       private_key_id: private_key_id_string
-  #       private_key: private_key_string
-  #       client_email: client@example.com
-  #       client_id: client_id_string
-  #       auth_uri: http://example.com/auth_uri
-  #       token_uri: http://example.com/token_uri
-  #       auth_provider_x509_cert_url: http://example.com/provider_cert_url
-  #       client_x509_cert_url: http://example.com/client_cert_url
-  #     rootdirectory: /gcs/object/name/prefix
-  #     chunksize: 5242880
-  #   s3:
-  #     accesskey: awsaccesskey
-  #     secretkey: awssecretkey
-  #     region: us-west-1
-  #     regionendpoint: http://myobjects.local
-  #     forcepathstyle: true
-  #     accelerate: false
-  #     bucket: bucketname
-  #     encrypt: true
-  #     keyid: mykeyid
-  #     secure: true
-  #     v4auth: true
-  #     chunksize: 5242880
-  #     multipartcopychunksize: 33554432
-  #     multipartcopymaxconcurrency: 100
-  #     multipartcopythresholdsize: 33554432
-  #     rootdirectory: /s3/object/name/prefix
-  #     usedualstack: false
-  #     loglevel: debug
-  #   inmemory:  # This driver takes no parameters
-  # tag:
-  #   concurrencylimit: 8
   delete:
     enabled: true
-#   redirect:
-#     disable: false
 #   cache:
 #     blobdescriptor: redis
 #     blobdescriptorsize: 10000
@@ -92,9 +40,6 @@ storage:
 #     readonly:
 #       enabled: false
 auth:
-  # silly:
-  #   realm: silly-realm
-  #   service: silly-service
   token:
     autoredirect: true
     realm: https://sso.ladesa.com.br/realms/registry/protocol/docker-v2/auth
@@ -104,33 +49,6 @@ auth:
     signingalgorithms:
       - EdDSA
       - HS256
-#   htpasswd:
-#     realm: basic-realm
-#     path: /path/to/htpasswd
-# middleware:
-#   registry:
-#     - name: ARegistryMiddleware
-#       options:
-#         foo: bar
-#   repository:
-#     - name: ARepositoryMiddleware
-#       options:
-#         foo: bar
-#   storage:
-#     - name: cloudfront
-#       options:
-#         baseurl: https://my.cloudfronted.domain.com/
-#         privatekey: /path/to/pem
-#         keypairid: cloudfrontkeypairid
-#         duration: 3000s
-#         ipfilteredby: awsregion
-#         awsregion: us-east-1, use-east-2
-#         updatefrequency: 12h
-#         iprangesurl: https://ip-ranges.amazonaws.com/ip-ranges.json
-#   storage:
-#     - name: redirect
-#       options:
-#         baseurl: https://example.com/
 http:
   addr: 0.0.0.0:5000
 #   prefix: /my/nested/registry/
