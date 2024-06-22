@@ -4,7 +4,7 @@ metadata:
   name: ladesa-ro-sso-ingress
 spec:
   rules:
-    - host: ladesa.com.br
+    - host: sso.ladesa.com.br
       http:
         paths:
           - path: /
