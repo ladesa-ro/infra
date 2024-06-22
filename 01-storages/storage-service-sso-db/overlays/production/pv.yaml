@@ -5,4 +5,4 @@ metadata:
 spec:
   volumeMode: Filesystem
   hostPath:
-    path: /mnt/storage/service/api/production/db/data
+    path: /mnt/storage/service/sso/production/db/data
