@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: ladesa-ro-api-db-pv
+  name: ladesa-ro-api-db-production-pv
   labels:
     app: ladesa-ro-api
 spec:

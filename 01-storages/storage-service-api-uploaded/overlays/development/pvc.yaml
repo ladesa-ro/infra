@@ -6,9 +6,9 @@ metadata:
     app: ladesa-ro-api
 spec:
   storageClassName: manual
-  volumeName: ladesa-ro-api-uploaded-pv
+  volumeName: ladesa-ro-api-uploaded-development-pv
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
+      storage: 2Gi

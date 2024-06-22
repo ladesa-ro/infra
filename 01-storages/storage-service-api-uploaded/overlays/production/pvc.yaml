@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ladesa-ro-sso-db-pvc
+  name: ladesa-ro-api-uploaded-pvc
   labels:
-    app: ladesa-ro-sso
+    app: ladesa-ro-api
 spec:
   storageClassName: manual
-  volumeName: ladesa-ro-sso-db-pv
+  volumeName: ladesa-ro-api-uploaded-production-pv
   accessModes:
     - ReadWriteOnce
   resources:
