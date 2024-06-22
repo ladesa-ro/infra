@@ -9,6 +9,9 @@ kubectl create secret generic \
   ladesa-ro-sso-config \
   --namespace=ladesa-ro-local \
   --from-env-file=./sso.local.env \
+  --dry-run=client \
+  -o yaml \
+  | kubectl apply -f - \
 ;
 ```
 
@@ -21,6 +24,9 @@ kubectl create secret generic \
   ladesa-ro-sso-config \
   --namespace=ladesa-ro-development \
   --from-env-file=./sso.dev.env \
+  --dry-run=client \
+  -o yaml \
+  | kubectl apply -f - \
 ;
 ```
 
@@ -33,5 +39,8 @@ kubectl create secret generic \
   ladesa-ro-sso-config \
   --namespace=ladesa-ro-production \
   --from-env-file=./sso.prod.env \
+  --dry-run=client \
+  -o yaml \
+  | kubectl apply -f - \
 ;
 ```

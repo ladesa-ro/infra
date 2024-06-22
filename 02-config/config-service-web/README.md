@@ -9,6 +9,9 @@ kubectl create secret generic \
   ladesa-ro-web-config \
   --namespace=ladesa-ro-local \
   --from-env-file=./web.local.env \
+  --dry-run=client \
+  -o yaml \
+  | kubectl apply -f - \
 ;
 ```
 
@@ -21,6 +24,9 @@ kubectl create secret generic \
   ladesa-ro-web-config \
   --namespace=ladesa-ro-development \
   --from-env-file=./web.dev.env \
+  --dry-run=client \
+  -o yaml \
+  | kubectl apply -f - \
 ;
 ```
 
@@ -33,5 +39,8 @@ kubectl create secret generic \
   ladesa-ro-web-config \
   --namespace=ladesa-ro-production \
   --from-env-file=./web.prod.env \
+  --dry-run=client \
+  -o yaml \
+  | kubectl apply -f - \
 ;
 ```
