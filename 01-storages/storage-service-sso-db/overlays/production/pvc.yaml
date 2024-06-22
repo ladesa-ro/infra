@@ -5,7 +5,7 @@ metadata:
   labels:
     app: ladesa-ro-sso
 spec:
-  storageClassName: manual
+  storageClassName: ""
   volumeName: ladesa-ro-sso-db-production-pv
   accessModes:
     - ReadWriteOnce

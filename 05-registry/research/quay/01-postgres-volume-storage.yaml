@@ -34,7 +34,7 @@ metadata:
   labels:
     app: quay
 spec:
-  storageClassName: manual
+  storageClassName: ""
   volumeName: quay-postgres-storage-pv
   accessModes:
     - ReadWriteMany

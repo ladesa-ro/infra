@@ -35,7 +35,7 @@ metadata:
   labels:
     app: quay
 spec:
-  storageClassName: manual
+  storageClassName: ""
   volumeName: quay-app-config-pv
   accessModes:
     - ReadWriteMany

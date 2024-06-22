@@ -34,7 +34,7 @@ metadata:
   labels:
     app: registry
 spec:
-  storageClassName: manual
+  storageClassName: ""
   volumeName: registry-certs-pv
   accessModes:
     - ReadOnlyMany
