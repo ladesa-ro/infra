@@ -6,7 +6,7 @@ metadata:
     app: ladesa-ro-api
 spec:
   storageClassName: manual
-  volumeName: ladesa-ro-api-db-pv
+  volumeName: ladesa-ro-api-db-production-pv
   accessModes:
     - ReadWriteOnce
   resources:
