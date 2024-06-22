@@ -7,7 +7,7 @@ cp -n sso.env.example sso.local.env
 
 kubectl create secret generic \
   ladesa-ro-sso-config \
-  --namespace=ladesa-ro-local
+  --namespace=ladesa-ro-local \
   --from-env-file=./sso.local.env \
 ;
 ```
@@ -19,7 +19,7 @@ cp -n sso.env.example sso.dev.env
 
 kubectl create secret generic \
   ladesa-ro-sso-config \
-  --namespace=ladesa-ro-development
+  --namespace=ladesa-ro-development \
   --from-env-file=./sso.dev.env \
 ;
 ```
@@ -31,7 +31,7 @@ cp -n sso.env.example sso.prod.env
 
 kubectl create secret generic \
   ladesa-ro-sso-config \
-  --namespace=ladesa-ro-production
+  --namespace=ladesa-ro-production \
   --from-env-file=./sso.prod.env \
 ;
 ```

@@ -7,7 +7,7 @@ cp -n api-db.env.example api-db.local.env
 
 kubectl create secret generic \
   ladesa-ro-api-db-config \
-  --namespace=ladesa-ro-local
+  --namespace=ladesa-ro-local \
   --from-env-file=./api-db.local.env \
 ;
 ```
@@ -19,7 +19,7 @@ cp -n api-db.env.example api-db.dev.env
 
 kubectl create secret generic \
   ladesa-ro-api-db-config \
-  --namespace=ladesa-ro-development
+  --namespace=ladesa-ro-development \
   --from-env-file=./api-db.dev.env \
 ;
 ```
@@ -31,7 +31,7 @@ cp -n api-db.env.example api-db.prod.env
 
 kubectl create secret generic \
   ladesa-ro-api-db-config \
-  --namespace=ladesa-ro-production
+  --namespace=ladesa-ro-production \
   --from-env-file=./api-db.prod.env \
 ;
 ```
