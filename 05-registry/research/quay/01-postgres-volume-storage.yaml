@@ -12,7 +12,7 @@ spec:
   capacity:
     storage: 5Gi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   claimRef:
     namespace: default
     name: quay-postgres-storage-pvc

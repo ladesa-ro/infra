@@ -12,7 +12,7 @@ spec:
   capacity:
     storage: 30Gi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   claimRef:
     namespace: default
     name: quay-app-storage-pvc

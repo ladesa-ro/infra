@@ -12,7 +12,7 @@ spec:
   capacity:
     storage: 100Mi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   claimRef:
     namespace: default
     name: quay-app-config-pvc

@@ -8,7 +8,7 @@ spec:
   storageClassName: ""
   volumeName: ladesa-ro-api-db-production-pv
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 2Gi

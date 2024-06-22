@@ -12,7 +12,7 @@ spec:
   capacity:
     storage: 10Gi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   claimRef:
     namespace: default
     name: quay-app-log-pvc
