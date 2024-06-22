@@ -16,8 +16,8 @@ spec:
     - host: registry.ladesa.com.br
       http:
         paths:
-          - path: /v2/
-            pathType: Prefix
+          - path: /
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: registry
@@ -26,8 +26,8 @@ spec:
     - host: registry.kluster.local
       http:
         paths:
-          - path: /v2/
-            pathType: Prefix
+          - path: /
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: registry
