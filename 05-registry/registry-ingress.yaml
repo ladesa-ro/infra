@@ -13,6 +13,16 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
 spec:
   rules:
+    - host: registry.ladesa.com.br
+      http:
+        paths:
+          - path: /v2/
+            pathType: Prefix
+            backend:
+              service:
+                name: registry
+                port:
+                  name: web
     - host: registry.kluster.local
       http:
         paths:
