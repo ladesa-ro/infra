@@ -24,7 +24,7 @@ spec:
               containerPort: 8080
           envFrom:
             - secretRef:
-                name: ladesa-ro-sso-sso
+                name: ladesa-ro-sso-config
           resources:
             requests:
               cpu: "50m"
