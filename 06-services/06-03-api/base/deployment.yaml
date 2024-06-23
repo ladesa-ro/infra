@@ -26,7 +26,7 @@ spec:
           imagePullPolicy: Always
           ports:
             - name: web
-              containerPort: 80
+              containerPort: 3000
           envFrom:
             - secretRef:
                 name: ladesa-ro-api-config
