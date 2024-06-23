@@ -13,6 +13,47 @@ git clone https://github.com/ladesa-ro/infra.git
 cd infra
 ```
 
+### Scripts de conveniência
+
+- [`deploy.sh`](./deploy.sh)
+
+```sh
+./deploy.sh
+```
+
+Nota: por favor, garanta que `LADESA_DEPLOY_OPINATED_CONFIG_PATH` seja fornecido (configure o seu ~/.profile). Você pode criar a sua pasta de configuração baseada na [`02-config/example`](./02-config/example/).
+
+```sh
+cp 02-config/example -r ~/ladesa-ro/config;
+```
+
+#### Fornecer variável de ambiente na chamada do script
+
+```sh
+LADESA_DEPLOY_OPINATED_CONFIG_PATH=~/02-config/config  ./deploy.sh
+```
+
+#### Fornecer variável de ambiente via export no profile
+
+```sh
+cp 02-config/example ~/ladesa-ro/config;
+
+echo 'export LADESA_DEPLOY_OPINATED_CONFIG_PATH=$HOME/ladesa-ro/config' >>> ~/.profile
+echo 'source ~/.profile' >>> ~/.zshrc
+echo 'source ~/.profile' >>> ~/.bashrc
+exec $SHELL
+```
+
+- [`background-deploy.sh`](./background-deploy.sh)
+
+```sh
+./background-deploy.sh
+```
+
+### Github Actions
+
+- [`Deploy Services`](./.github/workflows/deploy.yml)
+
 ### Sistemas Operacionais Suportados
 
 Este projeto foi projetado e testado para rodar nos seguintes sistemas operacionais:
@@ -98,28 +139,6 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
   - [06-02-gerar-horario/README.md](./06-services/06-02-gerar-horario/README.md)
   - [06-03-api/README.md](./06-services/06-03-api/README.md)
   - [06-04-web/README.md](./06-services/06-04-web/README.md)
-
-## Devops
-
-### Github Actions
-
-- [`Deploy Services`](./.github/workflows/deploy.yml)
-
-### Scripts de conveniência
-
-- [`deploy.sh`](./deploy.sh)
-
-```sh
-LADESA_DEPLOY_OPINATED_CONFIG_PATH=./02-config/example ./deploy.sh
-```
-
-- [`background-deploy.sh`](./background-deploy.sh)
-
-```sh
-./background-deploy.sh
-```
-
-Nota: por favor, garanta que `LADESA_DEPLOY_OPINATED_CONFIG_PATH` seja fornecido (configure o seu ~/.profile).
 
 ## Autores
 
