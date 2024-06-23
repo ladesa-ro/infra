@@ -10,3 +10,4 @@ fi
 (cd ./00-01-init-kubernetes-kind-cluster; ./init-cluster.sh);
 (cd ./00-02-setup-ingress-controller; ./setup-ingress-controller.sh);
 (cd ./00-03-project-namespaces; ./setup.sh);
+(cd ./00-04-setup-cert-manager; ./setup.sh);

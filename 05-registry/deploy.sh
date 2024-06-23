@@ -2,6 +2,4 @@
 
 set -xe
 
-kubectl apply -f registry-deployment.yaml \
-              -f registry-ingress.yaml \
-  ;
+(cd ./overlays/production/scripts; ./deploy.sh);
