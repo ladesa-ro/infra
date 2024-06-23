@@ -34,7 +34,7 @@ jobs:
 
             git fetch -p;
             git reset --hard origin/${TARGET_REPOSITORY_BRANCH};
-            git restore *;
-            # git clean -f -x;
+            git restore .;
+            git clean -f -x;
 
             ./deploy-in-background.sh;
