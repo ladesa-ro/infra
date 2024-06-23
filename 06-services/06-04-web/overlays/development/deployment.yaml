@@ -10,5 +10,4 @@ spec:
         - name: ladesa-registry-pull-secret
       containers:
         - name: ladesa-ro-web
-          # image: "registry.ladesa.com.br/api:development"
-          image: "traefik/whoami"
+          image: "registry.ladesa.com.br/api:development"

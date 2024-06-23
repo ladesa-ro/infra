@@ -4,6 +4,16 @@ metadata:
   name: ladesa-ro-web-ingress
 spec:
   rules:
+    - host: luna.sisgha.com
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: ladesa-ro-web
+                port:
+                  name: web
     - host: dev.ladesa.com.br
       http:
         paths:
