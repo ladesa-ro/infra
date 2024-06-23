@@ -2,17 +2,6 @@
 
 set -xe;
 
-# <!------------ opinated config check ------------>
-if [[ ! -v LADESA_DEPLOY_OPINATED_CONFIG_PATH ]]; then
-  echo "Please provide env LADESA_DEPLOY_OPINATED_CONFIG_PATH";
-fi
-
-if [ ! -d "$LADESA_DEPLOY_OPINATED_CONFIG_PATH" ]; then
-  echo "The provided path LADESA_DEPLOY_OPINATED_CONFIG_PATH is not a valid directory. You can use '02-config' as base.";
-fi
-
-# <!------------ / opinated config check ------------>
-
 # <!------------ 00-cluster ------------>
 export LADESA_DEPLOY_SETUP_CLUSTER=true;
 # ---

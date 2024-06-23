@@ -1,0 +1,1 @@
+# Checagem das Configurações

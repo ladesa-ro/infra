@@ -2,6 +2,7 @@
 
 set -xe
 
+(cd ./00-certificates; ./check.sh);
 (cd ./config-registry; ./check.sh);
 (cd ./config-service-api; ./check.sh);
 (cd ./config-service-api-db; ./check.sh);
