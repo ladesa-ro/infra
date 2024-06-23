@@ -37,4 +37,6 @@ jobs:
             git restore .;
             git clean -f -x;
 
+            export LADESA_DEPLOY_OPINATED_CONFIG_PATH=${{ secrets.LADESA_DEPLOY_OPINATED_CONFIG_PATH }}
+
             ./background-deploy.sh;
