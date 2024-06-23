@@ -7,14 +7,14 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
-    cert-manager.io/cluster-issuer: "ladesa-ro-issuer-production"
+    cert-manager.io/cluster-issuer: "ladesa-ro-issuer-development"
 spec:
   tls:
     - hosts:
-        - registry.ladesa.com.br
+        - registry.dev.ladesa.com.br
       secretName: registry-cert-tls
   rules:
-    - host: registry.ladesa.com.br
+    - host: registry.dev.ladesa.com.br
       http:
         paths:
           - path: /

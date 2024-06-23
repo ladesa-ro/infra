@@ -55,13 +55,24 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 
 - [02-config/README.md](./02-config/README.md)
 
-  - [00-certificates/README.md](./02-config/00-certificates/README.md)
-  - [config-registry/README.md](./02-config/config-registry/README.md)
-  - [config-service-api/README.md](./02-config/config-service-api/README.md)
-  - [config-service-api-db/README.md](./02-config/config-service-api-db/README.md)
-  - [config-service-sso/README.md](./02-config/config-service-sso/README.md)
-  - [config-service-sso-db/README.md](./02-config/config-service-sso-db/README.md)
-  - [config-service-web/README.md](./02-config/config-service-web/README.md)
+  - [check/README.md](./02-config/check/README.md)
+
+    - [00-certificates/check.sh](./02-config/check/00-certificates/check.sh)
+    - [config-registry/check.sh](./02-config/check/config-registry/check.sh)
+    - [config-service-api/check.sh](./02-config/check/config-service-api/check.sh)
+    - [config-service-api-db/check.sh](./02-config/check/config-service-api-db/check.sh)
+    - [config-service-sso/check.sh](./02-config/check/config-service-sso/check.sh)
+    - [config-service-sso-db/check.sh](./02-config/check/config-service-sso-db/check.sh)
+    - [config-service-web/check.sh](./02-config/check/config-service-web/check.sh)
+
+  - [example/README.md](./02-config/example/README.md)
+    - [00-certificates/README.md](./02-config/example/00-certificates/README.md)
+    - [config-registry/README.md](./02-config/example/config-registry/README.md)
+    - [config-service-api/README.md](./02-config/example/config-service-api/README.md)
+    - [config-service-api-db/README.md](./02-config/example/config-service-api-db/README.md)
+    - [config-service-sso/README.md](./02-config/example/config-service-sso/README.md)
+    - [config-service-sso-db/README.md](./02-config/example/config-service-sso-db/README.md)
+    - [config-service-web/README.md](./02-config/example/config-service-web/README.md)
 
 ### 03. Bancos de Dados
 
@@ -87,22 +98,18 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
   - [06-03-api/README.md](./06-services/06-03-api/README.md)
   - [06-04-web/README.md](./06-services/06-04-web/README.md)
 
-## Github Actions
+## Devops
+
+### Github Actions
 
 - [`Deploy Services`](./.github/workflows/deploy.yml)
 
-## Scripts de conveniência
-
-- [`00-cluster/setup.sh`](./00-cluster/setup.sh)
-
-```sh
-./00-cluster/setup.sh
-```
+### Scripts de conveniência
 
 - [`deploy.sh`](./deploy.sh)
 
 ```sh
-./deploy.sh
+LADESA_DEPLOY_OPINATED_CONFIG_PATH=./02-config/example ./deploy.sh
 ```
 
 - [`deploy-in-background.sh`](./deploy-in-background.sh)
@@ -110,6 +117,8 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 ```sh
 ./deploy-in-background.sh
 ```
+
+Nota: por favor, garanta que `LADESA_DEPLOY_OPINATED_CONFIG_PATH` seja fornecido (configure o seu ~/.profile).
 
 ## Autores
 

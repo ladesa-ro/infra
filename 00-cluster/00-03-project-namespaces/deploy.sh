@@ -2,6 +2,6 @@
 
 set -xe
 
-(cd overlays/local/scripts; ./deploy.sh);
-(cd overlays/development/scripts; ./deploy.sh);
-(cd overlays/production/scripts; ./deploy.sh);
+(cd overlays/local; ./deploy.sh);
+(cd overlays/development; ./deploy.sh);
+(cd overlays/production; ./deploy.sh);

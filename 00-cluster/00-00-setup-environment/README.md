@@ -24,7 +24,7 @@ Para gerenciar os containers entre diferentes nós, é utilizado a tecnologia Ku
 - `helm` - <https://helm.sh/>;
 - `cmctl` - <https://github.com/cert-manager/cmctl/>.
 
-### Docker
+### `docker`
 
 Por favor, veja a seção oficial de instalação do docker: <https://docs.docker.com/engine/install/>.
 
@@ -35,7 +35,7 @@ docker version
 
 ```
 
-### Kind
+### `kind`
 
 Por favor, veja a seção oficial de instalação do kind: <https://kind.sigs.k8s.io/docs/user/quick-start/#installation>.
 
@@ -55,7 +55,7 @@ Para verificar instalação do kubectl:
 kubectl version --client
 ```
 
-### Helm
+### `helm`
 
 Por favor, veja a seção oficial de instalação do helm: <https://helm.sh/docs/intro/install/>.
 
@@ -65,7 +65,7 @@ Para verificar instalação do helm:
 helm version
 ```
 
-### The cert-manager Command Line Tool (cmctl)
+### `cmctl` - The cert-manager Command Line Tool
 
 Por favor, veja a seção oficial de instalação do helm: <https://cert-manager.io/docs/reference/cmctl/#installation>.
 
@@ -77,7 +77,7 @@ cmctl version --client
 
 ## Script de Conveniência
 
-Este projeto conta com um script utilitário para a instalação das ferramentas `docker`, `kind`, `kubectl` e `helm` no linux x64.
+Este projeto conta com um script utilitário para a instalação das ferramentas `docker`, `kind`, `kubectl`, `helm` e `cmctl` caso não estejam presentes no `linux x64`.
 
 ```sh
 ./setup.sh

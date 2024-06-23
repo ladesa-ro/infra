@@ -5,4 +5,4 @@ resources:
   - ../../base
   - ingress.yaml
 
-namespace: ladesa-ro-production
+namespace: ladesa-ro-local
