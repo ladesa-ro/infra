@@ -39,6 +39,7 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
   - [00-01-init-kubernetes-kind-cluster/README.md](./00-cluster/00-01-init-kubernetes-kind-cluster/README.md)
   - [00-02-ingress-controller/README.md](./00-cluster/00-02-ingress-controller/README.md)
   - [00-03-project-namespaces/README.md](./00-cluster/00-03-project-namespaces/README.md)
+  - [00-04-cert-manager/README.md](./00-cluster/00-04-cert-manager/README.md)
 
 ### 01. Volumes
 
@@ -46,20 +47,21 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 
   - [storage-registry-artifacts](./01-storages/storage-registry-artifacts)
   - [storage-registry-certs](./01-storages/storage-registry-certs)
-  - [storage-service-api-uploaded](./01-storages/storage-service-api-uploaded)
   - [storage-service-api-db](./01-storages/storage-service-api-db)
+  - [storage-service-api-uploaded](./01-storages/storage-service-api-uploaded)
   - [storage-service-sso-db](./01-storages/storage-service-sso-db)
 
 ### 02. Configurações dos Sistemas
 
 - [02-config/README.md](./02-config/README.md)
 
-  - [config-registry](./02-config/config-registry)
-  - [config-service-api](./02-config/config-service-api)
-  - [config-service-api-db](./02-config/config-service-api-db)
-  - [config-service-sso](./02-config/config-service-sso)
-  - [config-service-sso-db](./02-config/config-service-sso-db)
-  - [config-service-web](./02-config/config-service-web)
+  - [00-certificates/README.md](./02-config/00-certificates/README.md)
+  - [config-registry/README.md](./02-config/config-registry/README.md)
+  - [config-service-api/README.md](./02-config/config-service-api/README.md)
+  - [config-service-api-db/README.md](./02-config/config-service-api-db/README.md)
+  - [config-service-sso/README.md](./02-config/config-service-sso/README.md)
+  - [config-service-sso-db/README.md](./02-config/config-service-sso-db/README.md)
+  - [config-service-web/README.md](./02-config/config-service-web/README.md)
 
 ### 03. Bancos de Dados
 
