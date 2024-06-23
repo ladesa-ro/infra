@@ -113,10 +113,10 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 LADESA_DEPLOY_OPINATED_CONFIG_PATH=./02-config/example ./deploy.sh
 ```
 
-- [`deploy-in-background.sh`](./deploy-in-background.sh)
+- [`background-deploy.sh`](./background-deploy.sh)
 
 ```sh
-./deploy-in-background.sh
+./background-deploy.sh
 ```
 
 Nota: por favor, garanta que `LADESA_DEPLOY_OPINATED_CONFIG_PATH` seja fornecido (configure o seu ~/.profile).
