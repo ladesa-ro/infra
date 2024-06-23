@@ -6,6 +6,8 @@ spec:
   replicas: 2
   template:
     spec:
+      imagePullSecrets:
+        - name: ladesa-registry-pull-secret
       containers:
         - name: ladesa-ro-api
           image: "registry.ladesa.com.br/api:production"
