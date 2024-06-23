@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -xe;
-
 # <!------------ 00-cluster ------------>
 export LADESA_DEPLOY_SETUP_CLUSTER=true;
 # ---
