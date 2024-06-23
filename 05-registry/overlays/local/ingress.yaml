@@ -12,7 +12,7 @@ spec:
   tls:
     - hosts:
         - registry.kluster.local
-      secretName: registry-cert-tls
+      secretName: registry-cert-local-tls
   rules:
     - host: registry.kluster.local
       http:

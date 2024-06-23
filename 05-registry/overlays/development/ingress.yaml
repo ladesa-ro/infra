@@ -12,7 +12,7 @@ spec:
   tls:
     - hosts:
         - registry.dev.ladesa.com.br
-      secretName: registry-cert-tls
+      secretName: registry-cert-development-tls
   rules:
     - host: registry.dev.ladesa.com.br
       http:
