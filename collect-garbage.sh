@@ -14,10 +14,10 @@ echo  ================================================================
 
 for NAMESPACE in ${PROJECT_NAMESPACES}
 do
-  replicas=$(((kubectl get replicaset -n ${NAMESPACE} -o jsonpath='{ .items[?(@.spec.replicas==0)].metadata.name }'); exit 0));
+  REPLICAS=$(kubectl get replicaset -n ${NAMESPACE} -o jsonpath='{ .items[?(@.spec.replicas==0)].metadata.name }'; exit 0);
 
-  if ! [ -z "$replicas" ]; then
-    ((kubectl delete replicaset -n ${NAMESPACE} ${replicas}); exit 0;)
+  if ! [ -z "$REPLICAS" ]; then
+    ((kubectl delete replicaset -n ${NAMESPACE} ${REPLICAS}); exit 0;)
   fi;
 
 done;
