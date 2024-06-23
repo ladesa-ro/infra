@@ -2,6 +2,10 @@
 
 set -xe
 
+if [[ ! "${LADESA_DEPLOY_SETUP_CLUSTER}" == "true" ]]; then
+  exit 0;
+fi
+
 if [[ ! "${LADESA_DEPLOY_SETUP_CLUSTER_ENVIRONMENT}" == "true" ]]; then
   exit 0;
 fi
@@ -73,10 +77,12 @@ if ! command -v cmctl; then
   echo "Installing cmctl"
   echo  ================================================================
 
-  OS=$(uname -s | tr A-Z a-z); ARCH=$(uname -m | sed 's/x86_64/amd64/' | sed 's/aarch64/arm64/'); curl -fsSL -o cmctl https://github.com/cert-manager/cmctl/releases/latest/download/cmctl_${OS}_${ARCH}
-  chmod +x cmctl
-  mv cmctl /usr/local/bin
+  OS=$(uname -s | tr A-Z a-z); ARCH=$(uname -m | sed 's/x86_64/amd64/' | sed 's/aarch64/arm64/'); curl -fsSL -o cmctl https://github.com/cert-manager/cmctl/releases/latest/download/cmctl_${OS}_${ARCH};
+  chmod +x cmctl;
+  mv cmctl /usr/local/bin;
 fi;
+
+cmctl version --client;
 
 echo  ================================================================
 

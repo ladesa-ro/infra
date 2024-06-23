@@ -3,7 +3,7 @@
 ## Script de Conveniência
 
 ```sh
-./setup.sh
+./deploy.sh
 ```
 
 ## Links Úteis

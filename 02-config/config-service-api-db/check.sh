@@ -2,14 +2,14 @@
 
 set -xe
 
-if [[ "${LADESA_DEPLOY_SERVICE_API_LOCAL}" == "true" ]]; then
+if [[ "${LADESA_DEPLOY_NS_LOCAL_SERVICE_API}" == "true" ]]; then
   kubectl get secret ladesa-ro-api-db-config --namespace=ladesa-ro-local;
 fi
 
-if [[ "${LADESA_DEPLOY_SERVICE_API_DEVELOPMENT}" == "true" ]]; then
+if [[ "${LADESA_DEPLOY_NS_DEVELOPMENT_SERVICE_API}" == "true" ]]; then
   kubectl get secret ladesa-ro-api-db-config --namespace=ladesa-ro-development;
 fi
 
-if [[ "${LADESA_DEPLOY_SERVICE_API_PRODUCTION}" == "true" ]]; then
+if [[ "${LADESA_DEPLOY_NS_PRODUCTION_SERVICE_API}" == "true" ]]; then
   kubectl get secret ladesa-ro-api-db-config --namespace=ladesa-ro-production;
 fi

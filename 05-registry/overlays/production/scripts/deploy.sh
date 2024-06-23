@@ -2,6 +2,6 @@
 
 set -xe
 
-if [[ "${LADESA_DEPLOY_REGISTRY_PRODUCTION}" == "true" ]]; then
+if [[ "${LADESA_DEPLOY_NS_PRODUCTION_REGISTRY}" == "true" ]]; then
   kubectl apply -k ..;
 fi

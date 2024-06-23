@@ -41,7 +41,7 @@ storage:
 #       enabled: false
 auth:
   token:
-    autoredirect: true
+    autoredirect: false
     realm: https://sso.ladesa.com.br/realms/registry/protocol/docker-v2/auth
     service: docker-registry
     issuer: https://sso.ladesa.com.br/realms/registry

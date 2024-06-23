@@ -2,6 +2,6 @@
 
 set -xe
 
-if [[ "${LADESA_DEPLOY_SERVICE_WEB_DEVELOPMENT}" == "true" ]]; then
+if [[ "${LADESA_DEPLOY_NS_DEVELOPMENT_SERVICE_WEB}" == "true" ]]; then
   kubectl apply -k ..;
 fi

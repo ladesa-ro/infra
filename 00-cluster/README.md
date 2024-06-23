@@ -10,13 +10,17 @@ Veja: [00-setup-environment/README.md](./00-00-setup-environment/README.md).
 
 Veja: [01-init-kubernetes-kind-cluster/README.md](./00-01-init-kubernetes-kind-cluster/README.md).
 
-### 00-02-setup-ingress-controller
+### 00-02-ingress-controller
 
-Veja: [02-setup-ingress-controller/README.md](./00-02-setup-ingress-controller/README.md).
+Veja: [02-ingress-controller/README.md](./00-02-ingress-controller/README.md).
 
 ### 00-03-project-namespaces
 
 Veja: [00-03-project-namespaces/README.md](./00-03-project-namespaces/README.md).
+
+### 00-04-cert-manager
+
+Veja: [00-04-cert-manager/README.md](./00-04-cert-manager/README.md).
 
 ## Scripts de conveniência
 

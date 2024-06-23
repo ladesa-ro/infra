@@ -4,23 +4,27 @@ A estrutura de implantação do sistema utiliza como base o Kubernetes e o Docke
 
 ## Tecnologias de Base
 
+### Runtime de Containers
+
 - Docker Engine - <https://docs.docker.com/engine/>;
-- Kubernetes - <https://kubernetes.io/docs/concepts/>.
 
-### Ferramentas
+Para a execução dos containers, é utilizado a ferramenta Docker Engine.
 
-- docker - <https://docs.docker.com/engine/>;
-- kind - <https://kind.sigs.k8s.io/>;
-- kubectl - <https://kubernetes.io/pt-br/docs/reference/kubectl/>;
-- helm - <https://helm.sh/>.
+### Orquestrador de Containers
 
-Este projeto conta com um script utilitário para a instalação das ferramentas `docker`, `kind`, `kubectl` e `helm` no linux x64.
+- Kubernetes - <https://kubernetes.io/>.
 
-```sh
-./setup-environment.sh
-```
+Para gerenciar os containers entre diferentes nós, é utilizado a tecnologia Kubernetes, criada pela Google. Veja os conceitos do Kubernetes na documentação oficial: <https://kubernetes.io/docs/concepts/overview/>.
 
-#### Docker
+## Ferramentas
+
+- `docker` - <https://docs.docker.com/reference/cli/docker/>;
+- `kind` - <https://kind.sigs.k8s.io/>;
+- `kubectl` - <https://kubernetes.io/pt-br/docs/reference/kubectl/>;
+- `helm` - <https://helm.sh/>;
+- `cmctl` - <https://github.com/cert-manager/cmctl/>.
+
+### Docker
 
 Por favor, veja a seção oficial de instalação do docker: <https://docs.docker.com/engine/install/>.
 
@@ -31,7 +35,7 @@ docker version
 
 ```
 
-#### Kind
+### Kind
 
 Por favor, veja a seção oficial de instalação do kind: <https://kind.sigs.k8s.io/docs/user/quick-start/#installation>.
 
@@ -41,7 +45,7 @@ Para verificar instalação do kind:
 kind --version
 ```
 
-#### Kubectl
+### Kubectl
 
 Por favor, veja a seção oficial de instalação do kubectl: <https://kubernetes.io/docs/tasks/tools/>.
 
@@ -51,7 +55,7 @@ Para verificar instalação do kubectl:
 kubectl version --client
 ```
 
-#### Helm
+### Helm
 
 Por favor, veja a seção oficial de instalação do helm: <https://helm.sh/docs/intro/install/>.
 
@@ -59,4 +63,22 @@ Para verificar instalação do helm:
 
 ```sh
 helm version
+```
+
+### The cert-manager Command Line Tool (cmctl)
+
+Por favor, veja a seção oficial de instalação do helm: <https://cert-manager.io/docs/reference/cmctl/#installation>.
+
+Para verificar instalação do cmctl:
+
+```sh
+cmctl version --client
+```
+
+## Script de Conveniência
+
+Este projeto conta com um script utilitário para a instalação das ferramentas `docker`, `kind`, `kubectl` e `helm` no linux x64.
+
+```sh
+./setup.sh
 ```

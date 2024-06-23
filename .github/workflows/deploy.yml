@@ -33,7 +33,8 @@ jobs:
             git remote set-url origin ${TARGET_REPOSITORY_URL};
 
             git fetch -p;
-            git clean -f -x;
             git reset --hard origin/${TARGET_REPOSITORY_BRANCH};
+            git restore *;
+            # git clean -f -x;
 
             ./deploy-in-background.sh;

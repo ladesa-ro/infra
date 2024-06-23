@@ -37,7 +37,7 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 
   - [00-00-setup-environment/README.md](./00-cluster/00-00-setup-environment/README.md)
   - [00-01-init-kubernetes-kind-cluster/README.md](./00-cluster/00-01-init-kubernetes-kind-cluster/README.md)
-  - [00-02-setup-ingress-controller/README.md](./00-cluster/00-02-setup-ingress-controller/README.md)
+  - [00-02-ingress-controller/README.md](./00-cluster/00-02-ingress-controller/README.md)
   - [00-03-project-namespaces/README.md](./00-cluster/00-03-project-namespaces/README.md)
 
 ### 01. Volumes

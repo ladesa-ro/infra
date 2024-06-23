@@ -11,7 +11,7 @@ Conforme a configuração do cluster em [cluster/01-init-kubernetes-kind-cluster
 - host `:80` -> ingress controller `:80`
 - host `:443` -> ingress controller `:443`
 
-Por uma questão organizacional, a configuração do ingress controller foi feita em[cluster/02-setup-ingress-controller/README.md](../../cluster/02-setup-ingress-controller/README.md), e este passo serve apenas para aguardar a disponibilidade desse serviço.
+Por uma questão organizacional, a configuração do ingress controller foi feita em[cluster/02-ingress-controller/README.md](../../cluster/02-ingress-controller/README.md), e este passo serve apenas para aguardar a disponibilidade desse serviço.
 
 ---
 

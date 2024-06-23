@@ -1,6 +1,3 @@
-# three node cluster with an ingress-ready control-plane node
-# and extra port mappings over 80/443 and 2 workers
-# source: https://kind.sigs.k8s.io/docs/user/ingress/
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
@@ -12,6 +9,9 @@ nodes:
           kubeletExtraArgs:
             node-labels: "ingress-ready=true,x-ladesa-infra-host=yes"
     extraPortMappings:
+      # three node cluster with an ingress-ready control-plane node
+      # and extra port mappings over 80/443/30778 and 2 workers
+      # source: https://kind.sigs.k8s.io/docs/user/ingress/
       - containerPort: 80
         hostPort: 80
         protocol: TCP
