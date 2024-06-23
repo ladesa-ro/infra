@@ -12,9 +12,6 @@ spec:
     storage: 20Gi
   accessModes:
     - ReadWriteMany
-  claimRef:
-    namespace: default
-    name: registry-artifacts-production-pvc
   persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
