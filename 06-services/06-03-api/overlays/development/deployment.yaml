@@ -8,5 +8,4 @@ spec:
     spec:
       containers:
         - name: ladesa-ro-api
-          # image: "registry.ladesa.com.br/api:development"
-          image: "traefik/whoami"
+          image: "registry.ladesa.com.br/api:development"
