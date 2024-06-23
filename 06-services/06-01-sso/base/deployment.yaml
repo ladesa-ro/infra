@@ -32,27 +32,27 @@ spec:
             limits:
               memory: "2Gi"
               cpu: "2"
-      readinessProbe:
-        httpGet:
-          path: /health/ready
-          port: 8080
-        initialDelaySeconds: 30
-        periodSeconds: 10
-        timeoutSeconds: 1
-        failureThreshold: 20
-      startupProbe:
-        httpGet:
-          path: /health/started
-          port: 8080
-        initialDelaySeconds: 30
-        periodSeconds: 10
-        timeoutSeconds: 1
-        failureThreshold: 20
-      livenessProbe:
-        httpGet:
-          path: /health/live
-          port: 8080
-        initialDelaySeconds: 30
-        periodSeconds: 10
-        timeoutSeconds: 1
-        failureThreshold: 20
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 1
+            failureThreshold: 20
+          startupProbe:
+            httpGet:
+              path: /health/started
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 1
+            failureThreshold: 20
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 1
+            failureThreshold: 20

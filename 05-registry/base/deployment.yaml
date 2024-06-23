@@ -45,21 +45,21 @@ spec:
             limits:
               cpu: "0.5"
               memory: "1Gi"
-      readinessProbe:
-        httpGet:
-          path: /
-          port: 5000
-        initialDelaySeconds: 10
-        periodSeconds: 10
-      livenessProbe:
-        httpGet:
-          path: /
-          port: 5000
-        initialDelaySeconds: 10
-        periodSeconds: 15
-      startupProbe:
-        httpGet:
-          path: /
-          port: 5000
-        failureThreshold: 30
-        periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 15
+          startupProbe:
+            httpGet:
+              path: /
+              port: 5000
+            failureThreshold: 30
+            periodSeconds: 10
