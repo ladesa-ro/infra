@@ -1,6 +1,7 @@
 # Configurações
 
-- [config-registry](./config-registry)
+- [00-certificates/README.md](./00-certificates/README.md)
+- [01-registry-secrets/README.md](./01-registry-secrets/README.md)
 - [config-service-api](./config-service-api)
 - [config-service-api-db](./config-service-api-db)
 - [config-service-sso](./config-service-sso)

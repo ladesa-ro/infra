@@ -67,6 +67,7 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
 
   - [example/README.md](./02-config/example/README.md)
     - [00-certificates/README.md](./02-config/example/00-certificates/README.md)
+    - [01-registry-secrets/README.md](./02-config/example/01-registry-secrets/README.md)
     - [config-registry/README.md](./02-config/example/config-registry/README.md)
     - [config-service-api/README.md](./02-config/example/config-service-api/README.md)
     - [config-service-api-db/README.md](./02-config/example/config-service-api-db/README.md)
