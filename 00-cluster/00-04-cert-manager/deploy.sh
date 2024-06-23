@@ -2,7 +2,11 @@
 
 set -xe;
 
-if [[ ! "${LADESA_DEPLOY_SETUP_CLUTER_CERT_MANAGER}" == "true" ]]; then
+if [[ ! "${LADESA_DEPLOY_SETUP_CLUSTER}" == "true" ]]; then
+  exit 0;
+fi
+
+if [[ ! "${LADESA_DEPLOY_SETUP_CLUSTER_CERT_MANAGER}" == "true" ]]; then
   exit 0;
 fi
 

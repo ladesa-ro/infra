@@ -2,7 +2,17 @@
 
 set -xe
 
-if [[ "${LADESA_DEPLOY_NS_LOCAL_SERVICE_SSO}" == "true" ]]; then
-  kubectl apply -k ..;
-  kubectl rollout restart deployment.apps/ladesa-ro-sso --namespace ladesa-ro-local;
+if [[ ! "${LADESA_DEPLOY_NS_LOCAL}" == "true" ]]; then
+  exit 0;
 fi
+
+if [[ ! "${LADESA_DEPLOY_NS_LOCAL_SERVICE_SSO}" == "true" ]]; then
+  exit 0;
+fi
+
+kubectl apply -k ..;
+
+kubectl rollout restart \
+  deployment.apps/ladesa-ro-sso \
+  --namespace ladesa-ro-local \
+;

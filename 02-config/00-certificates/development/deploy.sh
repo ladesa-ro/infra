@@ -2,6 +2,6 @@
 
 set -xe
 
-if [[ "${LADESA_DEPLOY_CERT_DEVELOPMENT}" == "true" ]]; then
+if [[ "${LADESA_DEPLOY_NS_DEVELOPMENT_CERT}" == "true" ]]; then
   kubectl apply -f issuer.yaml;
 fi
