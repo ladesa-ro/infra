@@ -2,5 +2,4 @@
 
 set -xe
 
-kubectl apply -f volume-registry-certs.yaml \
-  ;
+(cd overlays/production/scripts; ./deploy.sh);

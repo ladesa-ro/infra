@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: registry-certs-pv
+  name: registry-certs-production-pv
   namespace: default
   labels:
     app: registry
@@ -12,10 +12,7 @@ spec:
   capacity:
     storage: 100Mi
   accessModes:
-    - ReadOnlyMany
-  claimRef:
-    namespace: default
-    name: registry-certs-pvc
+    - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
@@ -25,19 +22,3 @@ spec:
               operator: In
               values:
                 - "yes"
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: registry-certs-pvc
-  namespace: default
-  labels:
-    app: registry
-spec:
-  storageClassName: ""
-  volumeName: registry-certs-pv
-  accessModes:
-    - ReadOnlyMany
-  resources:
-    requests:
-      storage: 100Mi

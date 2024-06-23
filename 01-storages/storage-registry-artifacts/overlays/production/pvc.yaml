@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: registry-artifacts-pvc
+  labels:
+    app: registry
+spec:
+  storageClassName: ""
+  volumeName: registry-artifacts-production-pv
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 20Gi

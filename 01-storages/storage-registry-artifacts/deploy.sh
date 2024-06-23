@@ -2,5 +2,4 @@
 
 set -xe
 
-kubectl apply -f volume-registry-artifacts.yaml \
-  ;
+(cd overlays/production/scripts; ./deploy.sh);

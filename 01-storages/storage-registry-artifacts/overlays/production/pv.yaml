@@ -1,21 +1,20 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: registry-artifacts-pv
-  namespace: default
+  name: registry-artifacts-production-pv
   labels:
     app: registry
 spec:
   volumeMode: Filesystem
   hostPath:
-    path: /mnt/storage/registry/storage
+    path: /mnt/storage/registry/production/data
   capacity:
     storage: 20Gi
   accessModes:
     - ReadWriteMany
   claimRef:
     namespace: default
-    name: registry-artifacts-pvc
+    name: registry-artifacts-production-pvc
   persistentVolumeReclaimPolicy: Retain
   nodeAffinity:
     required:
@@ -25,19 +24,3 @@ spec:
               operator: In
               values:
                 - "yes"
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: registry-artifacts-pvc
-  namespace: default
-  labels:
-    app: registry
-spec:
-  storageClassName: ""
-  volumeName: registry-artifacts-pv
-  accessModes:
-    - ReadWriteMany
-  resources:
-    requests:
-      storage: 20Gi
