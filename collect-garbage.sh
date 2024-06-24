@@ -46,8 +46,8 @@ echo  ================================================================
 echo "Cleaning orphaned docker containers and images..."
 echo  ================================================================
 
-docker container prune -fa;
-docker image prune -f;
+docker container prune -f;
+docker image prune -fa;
 
 echo "Orphaned docker containers and images collected."
 
