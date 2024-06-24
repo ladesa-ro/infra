@@ -21,19 +21,19 @@ cd infra
 ./deploy.sh
 ```
 
-Nota: por favor, garanta que `LADESA_DEPLOY_OPINATED_CONFIG_PATH` seja fornecido (configure o seu ~/.profile). Você pode criar a sua pasta de configuração baseada na [`02-config/example`](./02-config/example/).
+Nota: por favor, garanta que `LADESA_DEPLOY_OPINATED_CONFIG_PATH` seja fornecido. Você pode criar a sua pasta de configuração baseada na [`02-config/example`](./02-config/example/).
 
 ```sh
 cp 02-config/example -r ~/ladesa-ro/config;
 ```
 
-#### Fornecer variável de ambiente na chamada do script
+#### Estratégia 1: Fornecer variável de ambiente na chamada do script
 
 ```sh
 LADESA_DEPLOY_OPINATED_CONFIG_PATH=~/02-config/config  ./deploy.sh
 ```
 
-#### Fornecer variável de ambiente via export no profile
+#### Estratégia 2: Fornecer variável de ambiente via export no profile
 
 ```sh
 cp 02-config/example ~/ladesa-ro/config;
@@ -48,6 +48,18 @@ exec $SHELL
 
 ```sh
 ./background-deploy.sh
+```
+
+- [`collect-garbage.sh`](./collect-garbage.sh)
+
+```sh
+./collect-garbage.sh
+```
+
+Cronjob recomendado:
+
+```sh
+10-40/23 * * * * /bin/bash -c "(/tmp/ladesa-ro/infra/repo/collect-garbage.sh; exit 0)";
 ```
 
 ### Github Actions
