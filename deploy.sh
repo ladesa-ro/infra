@@ -27,6 +27,32 @@ echo "Loaded envs.sh.";
 (cd ./05-registry; ./deploy.sh);
 (cd ./06-services; ./deploy.sh);
 
-./collect-garbage.sh;
+echo =================================================================
+
+GARBAGE_COLLECT_SCRIPT=${PWD}/collect-garbage.sh;
+
+if ! command -v at; then 
+  echo "Running collect garbage...";
+  ./collect-garbage.sh;
+  echo "Garbage collected!";
+else
+  echo "Garbage Collector Schedule Service"
+
+  AT_QUEUE="D"
+  QUEUE_DELAY="now + 5 minutes"
+  QUEUED_JOBS=$(atq -q ${AT_QUEUE} | cut -d$'\t' -f1)
+
+  if ! [ -z "$QUEUED_JOBS" ]; then
+    for QUEUED_JOB in ${QUEUED_JOBS}; do
+      echo "Removing scheduled garbage collector job: ${QUEUED_JOB}";
+      at -d ${QUEUED_JOB};
+    fi;
+  fi;
+
+  echo "${GARBAGE_COLLECT_SCRIPT}" | at -q ${QUEUED_JOB} ${QUEUE_DELAY}
+  echo "Scheduled garbage collector job: ${QUEUED_JOB} (delay: ${QUEUED_DELAY})"
+fi;
+
+echo =================================================================
 
 echo "Deployment complete! Thank you!";

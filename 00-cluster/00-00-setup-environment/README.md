@@ -23,6 +23,7 @@ Para gerenciar os containers entre diferentes nós, é utilizado a tecnologia Ku
 - `kubectl` - <https://kubernetes.io/pt-br/docs/reference/kubectl/>;
 - `helm` - <https://helm.sh/>;
 - `cmctl` - <https://github.com/cert-manager/cmctl/>.
+- `at` - <https://packages.debian.org/bullseye/at>.
 
 ### `docker`
 
@@ -74,6 +75,10 @@ Para verificar instalação do cmctl:
 ```sh
 cmctl version --client
 ```
+
+### `at` - Delayed job execution and batch processing
+
+Tutorial de instalação **não oficial**: <https://phoenixnap.com/kb/linux-at-command>
 
 ## Script de Conveniência
 
