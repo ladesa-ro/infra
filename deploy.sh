@@ -38,19 +38,20 @@ if ! command -v at; then
 else
   echo "Garbage Collector Schedule Service"
 
-  AT_QUEUE="D"
-  QUEUE_DELAY="now + 5 minutes"
-  QUEUED_JOBS=$(atq -q ${AT_QUEUE} | cut -d$'\t' -f1)
+  SCHEDULE_QUEUE_NAME="D"
+  SCHEDULE_DELAY="now + 5 minutes"
+  SCHEDULE_QUEUE_JOBS=$(atq -q ${SCHEDULE_QUEUE_NAME} | awk '{print $1}')
 
-  if ! [ -z "$QUEUED_JOBS" ]; then
-    for QUEUED_JOB in ${QUEUED_JOBS}; do
+  if ! [ -z "$SCHEDULE_QUEUE_JOBS" ]; then
+    for QUEUED_JOB in ${SCHEDULE_QUEUE_JOBS}; 
+    do
       echo "Removing scheduled garbage collector job: ${QUEUED_JOB}";
       at -d ${QUEUED_JOB};
-    fi;
+    done;
   fi;
 
-  echo "${GARBAGE_COLLECT_SCRIPT}" | at -q ${QUEUED_JOB} ${QUEUE_DELAY}
-  echo "Scheduled garbage collector job: ${QUEUED_JOB} (delay: ${QUEUED_DELAY})"
+  echo "${GARBAGE_COLLECT_SCRIPT}" | at -q ${SCHEDULE_QUEUE_NAME} ${SCHEDULE_DELAY}
+  echo "Scheduled garbage collector job: ${QUEUED_JOB} (delay: ${SCHEDULE_DELAY})"
 fi;
 
 echo =================================================================
