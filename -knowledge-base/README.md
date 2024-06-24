@@ -13,3 +13,18 @@ kubectl delete replicaset $(kubectl get replicaset -o jsonpath='{ .items[?(@.spe
 ```sh
 (kubectl exec --tty --stdin $(kubectl get pods --selector "app=registry" --output=name) -n default -- registry garbage-collect /etc/docker/registry/config.yml --delete-untagged=true; exit 0)
 ```
+
+## Timer for running jobs
+
+```sh
+sudo apt install at
+```
+
+```sh
+sudo systemctl enable --now atd
+```
+
+```sh
+echo "hello" | at 5PM
+echo "hello" | at now +5 minutes
+```

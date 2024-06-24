@@ -84,6 +84,9 @@ fi;
 
 cmctl version --client;
 
+# sudo apt install at
+# sudo systemctl enable --now atd
+
 echo  ================================================================
 
 rm -rf ${TMP_SETUP_PATH};

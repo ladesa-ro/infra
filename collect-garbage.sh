@@ -17,10 +17,12 @@ do
   REPLICAS=$(kubectl get replicaset -n ${NAMESPACE} -o jsonpath='{ .items[?(@.spec.replicas==0)].metadata.name }'; exit 0);
 
   if ! [ -z "$REPLICAS" ]; then
-    ((kubectl delete replicaset -n ${NAMESPACE} ${REPLICAS}); exit 0;)
+    ((kubectl delete replicaset -n ${NAMESPACE} ${REPLICAS}); exit 0;);
   fi;
 
 done;
+
+echo "Orphaned replicasets collected."
 
 echo  ================================================================
 echo "Cleaning unreferenced registry blobs (registry garbage-collect)"
@@ -37,5 +39,18 @@ do
     fi;
   done;
 done;
+
+echo "Unreferenced registry blobs garbage collected."
+
+echo  ================================================================
+echo "Cleaning orphaned docker containers and images..."
+echo  ================================================================
+
+docker container prune -fa;
+docker image prune -f;
+
+echo "Orphaned docker containers and images collected."
+
+echo  ================================================================
 
 echo "Cleanup Done! Thanks."
