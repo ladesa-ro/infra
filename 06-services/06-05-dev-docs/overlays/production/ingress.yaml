@@ -7,7 +7,7 @@ spec:
     - host: docs.ladesa.com.br
       http:
         paths:
-          - path: /dev
+          - path: /
             pathType: ImplementationSpecific
             backend:
               service:
