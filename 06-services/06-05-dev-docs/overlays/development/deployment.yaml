@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ladesa-ro-dev-docs
+spec:
+  replicas: 1
+  template:
+    spec:
+      imagePullSecrets:
+        - name: ladesa-registry-pull-secret
+      containers:
+        - name: ladesa-ro-dev-docs
+          image: "registry.ladesa.com.br/dev-docs:development"
