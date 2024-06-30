@@ -41,9 +41,6 @@ spec:
               port: 4321
             failureThreshold: 30
             periodSeconds: 10
-          envFrom:
-            - secretRef:
-                name: ladesa-ro-dev-docs-config
           resources:
             requests:
               cpu: "50m"
