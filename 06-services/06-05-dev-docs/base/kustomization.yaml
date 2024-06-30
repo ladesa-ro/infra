@@ -1,0 +1,12 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+
+commonLabels:
+  app: ladesa-ro-dev-docs
+
+commonAnnotations:
+  app: ladesa-ro-dev-docs-annotations
+#
+# namePrefix: ladesa-ro-dev-docs-
+# nameSuffix: -v1
