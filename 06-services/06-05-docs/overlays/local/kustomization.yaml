@@ -5,11 +5,11 @@ resources:
   - ../../base
   - ingress.yaml
 
-namespace: ladesa-ro-development
+namespace: ladesa-ro-local
 
 patches:
   - path: deployment.yaml
 
 configMapGenerator:
-  - name: ladesa-ro-dev-docs-configmap
+  - name: ladesa-ro-docs-configmap
     env: config.properties

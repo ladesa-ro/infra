@@ -151,7 +151,7 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
   - [06-02-gerar-horario/README.md](./06-services/06-02-gerar-horario/README.md)
   - [06-03-api/README.md](./06-services/06-03-api/README.md)
   - [06-04-web/README.md](./06-services/06-04-web/README.md)
-  - [06-05-dev-docs/README.md](./06-services/06-05-dev-docs/README.md)
+  - [06-05-docs/README.md](./06-services/06-05-docs/README.md)
 
 ## Autores
 

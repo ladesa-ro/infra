@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ladesa-ro-dev-docs-ingress
+  name: ladesa-ro-docs-ingress
 spec:
   rules:
     - host: docs.ladesa.com.br
@@ -11,6 +11,6 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: ladesa-ro-dev-docs
+                name: ladesa-ro-docs
                 port:
                   name: web

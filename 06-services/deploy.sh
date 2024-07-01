@@ -7,4 +7,4 @@ set -xe;
 (cd ./06-02-gerar-horario; ./deploy.sh);
 (cd ./06-03-api; ./deploy.sh);
 (cd ./06-04-web; ./deploy.sh);
-(cd ./06-05-dev-docs; ./deploy.sh);
+(cd ./06-05-docs; ./deploy.sh);

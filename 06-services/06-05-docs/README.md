@@ -1,6 +1,6 @@
-# dev-docs
+# docs
 
-Aplicação DEV Docs.
+Aplicação Docs.
 
 ## Deploy
 

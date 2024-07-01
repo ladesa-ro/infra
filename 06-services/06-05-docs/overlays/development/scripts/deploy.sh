@@ -6,13 +6,13 @@ if [[ ! "${LADESA_DEPLOY_NS_DEVELOPMENT}" == "true" ]]; then
   exit 0;
 fi
 
-if [[ ! "${LADESA_DEPLOY_NS_DEVELOPMENT_SERVICE_DEV_DOCS}" == "true" ]]; then
+if [[ ! "${LADESA_DEPLOY_NS_DEVELOPMENT_SERVICE_DOCS}" == "true" ]]; then
   exit 0;
 fi
 
 kubectl apply -k ..;
 
 kubectl rollout restart \
-  deployment.apps/ladesa-ro-dev-docs \
+  deployment.apps/ladesa-ro-docs \
   --namespace ladesa-ro-development \
 ;

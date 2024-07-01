@@ -3,10 +3,10 @@ resources:
   - service.yaml
 
 commonLabels:
-  app: ladesa-ro-dev-docs
+  app: ladesa-ro-docs
 
 commonAnnotations:
-  app: ladesa-ro-dev-docs-annotations
+  app: ladesa-ro-docs-annotations
 #
-# namePrefix: ladesa-ro-dev-docs-
+# namePrefix: ladesa-ro-docs-
 # nameSuffix: -v1
