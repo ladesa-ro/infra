@@ -13,6 +13,6 @@ fi
 kubectl apply -k ..;
 
 kubectl rollout restart \
-  deployment.apps/ladesa-ro-dev-docs \
+  deployment.apps/ladesa-ro-docs \
   --namespace ladesa-ro-local \
 ;
