@@ -22,23 +22,23 @@ spec:
           imagePullPolicy: Always
           ports:
             - name: web
-              containerPort: 4321
+              containerPort: 80
           readinessProbe:
             httpGet:
               path: /
-              port: 4321
+              port: 80
             initialDelaySeconds: 5
             periodSeconds: 10
           livenessProbe:
             httpGet:
               path: /
-              port: 4321
+              port: 80
             initialDelaySeconds: 10
             periodSeconds: 15
           startupProbe:
             httpGet:
               path: /
-              port: 4321
+              port: 80
             failureThreshold: 30
             periodSeconds: 10
           resources:
