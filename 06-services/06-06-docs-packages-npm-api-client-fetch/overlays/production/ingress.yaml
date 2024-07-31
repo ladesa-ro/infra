@@ -11,6 +11,7 @@ spec:
       http:
         paths:
           - path: /packages/npm/api-client-fetch(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: ladesa-ro-docs-packages-npm-api-client-fetch
