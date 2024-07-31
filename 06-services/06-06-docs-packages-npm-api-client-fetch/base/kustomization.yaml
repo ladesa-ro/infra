@@ -1,0 +1,12 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+
+commonLabels:
+  app: ladesa-ro-docs-packages-npm-api-client-fetch
+
+commonAnnotations:
+  app: ladesa-ro-docs-packages-npm-api-client-fetch-annotations
+#
+# namePrefix: ladesa-ro-docs-packages-npm-api-client-fetch-
+# nameSuffix: -v1

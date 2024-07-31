@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+  - ingress.yaml
+
+namespace: ladesa-ro-development
+
+patches:
+  - path: deployment.yaml
+
+configMapGenerator:
+  - name: ladesa-ro-docs-packages-npm-api-client-fetch-configmap
+    env: config.properties
