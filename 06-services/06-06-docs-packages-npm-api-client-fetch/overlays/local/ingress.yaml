@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ladesa-ro-docs-ingress
+spec:
+  rules:
+    - host: docs.ing.kluster.local
+      http:
+        paths:
+          - path: /dev
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: ladesa-ro-docs
+                port:
+                  name: web

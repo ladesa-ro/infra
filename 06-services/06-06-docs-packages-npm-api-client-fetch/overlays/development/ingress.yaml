@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ladesa-ro-docs-packages-npm-api-client-fetch-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+    - host: docs.dev.ladesa.com.br
+      http:
+        paths:
+          - path: /packages/npm/api-client-fetch(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: ladesa-ro-docs-packages-npm-api-client-fetch
+                port:
+                  name: web

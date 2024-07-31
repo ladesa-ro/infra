@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ladesa-ro-docs-packages-npm-api-client-fetch
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: ladesa-ro-docs-packages-npm-api-client-fetch
+          # image: "registry.ladesa.com.br/api:production"
+          image: "traefik/whoami"

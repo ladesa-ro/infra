@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ladesa-ro-docs-packages-npm-api-client-fetch
+  labels:
+    name: ladesa-ro-docs-packages-npm-api-client-fetch
+spec:
+  type: NodePort
+  selector:
+    name: ladesa-ro-docs-packages-npm-api-client-fetch
+  ports:
+    - name: web
+      targetPort: web
+      port: 80

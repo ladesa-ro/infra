@@ -152,6 +152,7 @@ A seguir, estão documentadas as implantações de cada pedaço do sistema. Note
   - [06-03-api/README.md](./06-services/06-03-api/README.md)
   - [06-04-web/README.md](./06-services/06-04-web/README.md)
   - [06-05-docs/README.md](./06-services/06-05-docs/README.md)
+  - [06-06-docs-packages-npm-api-client-fetch/README.md](./06-services/06-06-docs-packages-npm-api-client-fetch/README.md)
 
 ## Autores
 
