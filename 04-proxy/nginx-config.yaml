@@ -4,4 +4,4 @@ metadata:
   name: nginx-config
   namespace: nginx-ingress
 data:
-  allow-snippet-annotations: true
+  allow-snippet-annotations: "true"
