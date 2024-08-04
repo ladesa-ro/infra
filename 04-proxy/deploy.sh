@@ -8,3 +8,5 @@ kubectl wait \
   --selector=app.kubernetes.io/component=controller \
   --timeout=90s \
 ;
+
+kubectl apply -f nginx-config.yaml;
