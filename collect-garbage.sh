@@ -52,5 +52,14 @@ docker image prune -fa;
 echo "Orphaned docker containers and images collected."
 
 echo  ================================================================
+echo "Cleaning orphaned images inside kind cluster nodes..."
+echo  ================================================================
+
+for nodeName in $(kind get nodes)
+do
+  docker exec "${nodeName}" bash -c "crictl rmi --prune";
+done;
+
+echo  ================================================================
 
 echo "Cleanup Done! Thanks."
