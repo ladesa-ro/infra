@@ -1,0 +1,12 @@
+name: "Maintenance - Garbage Collection"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  system-cleanup:
+    runs-on: deploy
+    steps:
+      - run: echo TODO

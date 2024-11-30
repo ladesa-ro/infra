@@ -1,0 +1,12 @@
+name: "Maintenance - System Updates"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  system-update:
+    runs-on: deploy
+    steps:
+      - run: echo TODO
