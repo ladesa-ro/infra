@@ -1,3 +1,0 @@
-# RabbitMq
-
-TBD.
