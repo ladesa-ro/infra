@@ -19,4 +19,4 @@ runs:
           kubectl apply -f ${RESOURCE_PATH};
         else
           kubectl delete -f ${RESOURCE_PATH};
-        done
+        fi
