@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
       paths: 
-        - '.github/workflows/system-updates.yml'
+        - '.github/workflows/system-garbage-collection.yml'
 jobs:
   system-cleanup:
     runs-on:
