@@ -1,0 +1,22 @@
+name: Deploy simple resource
+description: Deploys a simple kubernetes resource into the cluster
+
+inputs:
+  enabled:
+    description: "set true for enabled and false for disabled"
+  path:
+    description: "path to yml/yaml file"
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        RESOURCE_PATH: ${{ inputs.path }}
+        RESOURCE_ENABLED: ${{ inputs.enabled }}
+      run: |
+        if [ "${RESOURCE_PATH}" == "true"]; then
+          kubectl apply -f ${RESOURCE_PATH};
+        else
+          kubectl delete -f ${RESOURCE_PATH};
+        done

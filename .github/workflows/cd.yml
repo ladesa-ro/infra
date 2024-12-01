@@ -3,10 +3,20 @@ name: "Continuous Deployment"
 on:
   push:
     branches: main
+    paths:
+      - .github/workflows/cd.yml
+      - resources/**/*
+
   workflow_dispatch:
 
 jobs:
   cd:
     runs-on: deploy
     steps:
-      - run: echo TODO
+      - uses: actions/checkout@v4
+
+      - name: "resources/base/certificates/development"
+        uses: ./.github/actions/deploy-simple-resource
+        with:
+          enabled: ${{ vars.ENABLE_CERT_DEVELOPMENT }}
+          path: ./resources/base/certificates/development/issuer.yaml
