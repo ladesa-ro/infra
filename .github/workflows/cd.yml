@@ -5,6 +5,7 @@ on:
     branches: main
     paths:
       - .github/workflows/cd.yml
+      - .github/actions/deploy-simple-resource
       - resources/**/*
 
   workflow_dispatch:
