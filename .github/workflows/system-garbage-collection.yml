@@ -7,7 +7,7 @@ on:
 
 jobs:
   system-cleanup:
-    runs-on: deploy
+    runs-on: maintenance
     steps:
       - uses: actions/checkout@v4
       - run: sudo ./utils/collect-garbage.sh
