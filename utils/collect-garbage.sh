@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -xe;
+set -x;
 
 echo "Starting cleanup..."
 
