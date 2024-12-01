@@ -2,7 +2,7 @@ name: "Maintenance - Garbage Collection"
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "10-40/23 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -11,4 +11,4 @@ jobs:
       group: maintenance
     steps:
       - uses: actions/checkout@v4
-      - run: sudo ./utils/collect-garbage.sh
+      - run: ./utils/collect-garbage.sh
