@@ -15,3 +15,6 @@ jobs:
     steps:
       - run: |
           topgrade --yes --skip-notify
+
+      - run: |
+          su devops -c "topgrade --yes --skip-notify"
