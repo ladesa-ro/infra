@@ -4,7 +4,9 @@ on:
   schedule:
     - cron: "10-40/23 * * * *"
   workflow_dispatch:
-
+  push:
+      paths: 
+        - '.github/workflows/system-updates.yml'
 jobs:
   system-cleanup:
     runs-on:

@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "30 3 * * 6,0-2"
   workflow_dispatch:
+  push:
+    paths: 
+      - '.github/workflows/system-updates.yml'
 
 jobs:
   system-update:
@@ -11,4 +14,4 @@ jobs:
       group: maintenance
     steps:
       - run: |
-          topgrade --yes --skip-notify --verbose |& tee -a ~/.cache/topgrade.log
+          topgrade --yes --skip-notify
