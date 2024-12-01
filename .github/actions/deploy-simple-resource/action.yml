@@ -11,6 +11,7 @@ inputs:
 
 runs:
   using: composite
+
   steps:
     - shell: bash
       env:
@@ -18,7 +19,7 @@ runs:
         RESOURCE_ENABLED: ${{ inputs.enabled }}
         RESOURCE_NAMESPACE: ${{ inputs.namespace }}
       run: |
-        if [ "${RESOURCE_PATH}" == "true" ]; then
+        if [ "${RESOURCE_ENABLED}" == "true" ]; then
           kubectl apply -f ${RESOURCE_PATH} -n ${RESOURCE_NAMESPACE};
         else
           kubectl delete -f ${RESOURCE_PATH} -n ${RESOURCE_NAMESPACE};
