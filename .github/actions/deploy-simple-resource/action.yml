@@ -15,7 +15,7 @@ runs:
         RESOURCE_PATH: ${{ inputs.path }}
         RESOURCE_ENABLED: ${{ inputs.enabled }}
       run: |
-        if [ "${RESOURCE_PATH}" == "true"]; then
+        if [[ "${RESOURCE_PATH}" == "true" ]]; then
           kubectl apply -f ${RESOURCE_PATH};
         else
           kubectl delete -f ${RESOURCE_PATH};
