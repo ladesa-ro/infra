@@ -21,3 +21,4 @@ jobs:
         with:
           enabled: ${{ vars.ENABLE_CERT_DEVELOPMENT }}
           path: ./resources/base/certificates/development/issuer.yaml
+          namespace: ladesa-ro-development

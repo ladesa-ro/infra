@@ -6,6 +6,8 @@ inputs:
     description: "set true for enabled and false for disabled"
   path:
     description: "path to yml/yaml file"
+  namespace:
+    description: "namespace"
 
 runs:
   using: composite
@@ -14,9 +16,10 @@ runs:
       env:
         RESOURCE_PATH: ${{ inputs.path }}
         RESOURCE_ENABLED: ${{ inputs.enabled }}
+        RESOURCE_NAMESPACE: ${{ inputs.namespace }}
       run: |
         if [ "${RESOURCE_PATH}" == "true" ]; then
-          kubectl apply -f ${RESOURCE_PATH};
+          kubectl apply -f ${RESOURCE_PATH} -n ${RESOURCE_NAMESPACE};
         else
-          kubectl delete -f ${RESOURCE_PATH};
+          kubectl delete -f ${RESOURCE_PATH} -n ${RESOURCE_NAMESPACE};
         fi
