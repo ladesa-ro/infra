@@ -7,7 +7,8 @@ on:
 
 jobs:
   system-update:
-    runs-on: maintenance
+    runs-on:
+      group: maintenance
     steps:
       - run: |
           topgrade --yes --skip-notify --verbose |& tee -a ~/.cache/topgrade.log
