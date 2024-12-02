@@ -19,8 +19,14 @@ runs:
         RESOURCE_ENABLED: ${{ inputs.enabled }}
         RESOURCE_NAMESPACE: ${{ inputs.namespace }}
       run: |
+        EXTRA_OPTS=""
+
+        if [ -z "${RESOURCE_NAMESPACE}" ];
+          EXTRA_OPTS+=" -n ${RESOURCE_NAMESPACE}";
+        fi
+
         if [ "${RESOURCE_ENABLED}" == "true" ]; then
-          kubectl apply -f ${RESOURCE_PATH} -n ${RESOURCE_NAMESPACE};
+          kubectl apply -f ${RESOURCE_PATH} ${EXTRA_OPTS};
         else
-          kubectl delete -f ${RESOURCE_PATH} -n ${RESOURCE_NAMESPACE} --ignore-not-found=true;
+          kubectl delete -f ${RESOURCE_PATH} ${EXTRA_OPTS} --ignore-not-found=true;
         fi
