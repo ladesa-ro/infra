@@ -21,7 +21,7 @@ runs:
       run: |
         EXTRA_OPTS=""
 
-        if [ -z "${RESOURCE_NAMESPACE}" ]; then
+        if [ ! -z "${RESOURCE_NAMESPACE}" ]; then
           EXTRA_OPTS+=" -n ${RESOURCE_NAMESPACE}";
         fi
 
