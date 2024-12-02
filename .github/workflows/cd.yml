@@ -22,3 +22,10 @@ jobs:
           enabled: ${{ vars.ENABLE_CERT_DEVELOPMENT }}
           path: ./resources/base/certificates/development/issuer.yaml
           namespace: ladesa-ro-development
+
+      - name: "resources/base/certificates/production"
+        uses: ./.github/actions/deploy-simple-resource
+        with:
+          enabled: ${{ vars.ENABLE_CERT_PRODUCTION }}
+          path: ./resources/base/certificates/production/issuer.yaml
+          namespace: ladesa-ro-production
