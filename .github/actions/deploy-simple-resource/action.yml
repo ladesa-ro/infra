@@ -8,6 +8,8 @@ inputs:
     description: "path to yml/yaml file"
   namespace:
     description: "namespace"
+  should-delete-on-disabled:
+    description: "should delete on disabled"
 
 runs:
   using: composite
@@ -18,6 +20,7 @@ runs:
         RESOURCE_PATH: ${{ inputs.path }}
         RESOURCE_ENABLED: ${{ inputs.enabled }}
         RESOURCE_NAMESPACE: ${{ inputs.namespace }}
+        RESOURCE_SHOULD_DELETE_ON_DISABLED: ${{ inputs.should-delete-on-disabled }}
       run: |
         EXTRA_OPTS=""
 
@@ -27,6 +30,6 @@ runs:
 
         if [ "${RESOURCE_ENABLED}" == "true" ]; then
           kubectl apply -f ${RESOURCE_PATH} ${EXTRA_OPTS};
-        else
+        elif [ "${RESOURCE_SHOULD_DELETE_ON_DISABLED}" == "true" ]; then
           kubectl delete -f ${RESOURCE_PATH} ${EXTRA_OPTS} --ignore-not-found=true;
         fi
