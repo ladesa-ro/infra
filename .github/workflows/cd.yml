@@ -31,11 +31,11 @@ jobs:
       - name: "resources/base/storages/sso/db/development"
         uses: ./.github/actions/deploy-kustomize-resource
         with:
-          enabled: ${{ vars.ENABLE_CERT_PRODUCTION }}
+          enabled: ${{ vars.ENABLE_STORAGE_SSO_DB_DEVELOPMENT }}
           path: ./resources/base/storages/sso/db/development
 
       - name: "resources/base/storages/sso/db/production"
         uses: ./.github/actions/deploy-kustomize-resource
         with:
-          enabled: ${{ vars.ENABLE_CERT_PRODUCTION }}
+          enabled: ${{ vars.ENABLE_STORAGE_SSO_DB_PRODUCTION }}
           path: ./resources/base/storages/sso/db/production
