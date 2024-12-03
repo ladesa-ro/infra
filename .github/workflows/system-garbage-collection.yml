@@ -14,4 +14,6 @@ jobs:
       group: maintenance
     steps:
       - uses: actions/checkout@v4
-      - run: bash ./utils/collect-garbage.sh
+      - run: bash ./garbage-collect.sh
+        working_dir: utils/cleanup
+        
