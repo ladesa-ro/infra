@@ -39,3 +39,39 @@ jobs:
         with:
           enabled: ${{ vars.ENABLE_STORAGE_SSO_DB_PRODUCTION }}
           path: ./resources/base/storages/sso/db/production
+
+      - name: "resources/base/storages/api/db/development"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_STORAGE_API_DB_DEVELOPMENT }}
+          path: ./resources/base/storages/api/db/development
+
+      - name: "resources/base/storages/api/db/production"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_STORAGE_API_DB_PRODUCTION }}
+          path: ./resources/base/storages/api/db/production
+
+      - name: "resources/base/storages/api/uploaded/development"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_STORAGE_API_UPLOADED_DEVELOPMENT }}
+          path: ./resources/base/storages/api/uploaded/development
+
+      - name: "resources/base/storages/api/uploaded/production"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_STORAGE_API_UPLOADED_PRODUCTION }}
+          path: ./resources/base/storages/api/uploaded/production
+
+      - name: "resources/base/storages/registry/certs/development"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_STORAGE_REGISTRY_CERTS_PRODUCTION }}
+          path: ./resources/base/storages/registry/certs/production
+
+      - name: "resources/base/storages/registry/artifacts/production"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_STORAGE_REGISTRY_ARTIFACTS_PRODUCTION }}
+          path: ./resources/base/storages/registry/artifacts/production
