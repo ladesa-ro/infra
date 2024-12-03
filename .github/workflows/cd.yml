@@ -27,3 +27,15 @@ jobs:
         with:
           enabled: ${{ vars.ENABLE_CERT_PRODUCTION }}
           path: ./resources/base/certificates/production/issuer.yaml
+
+      - name: "resources/base/storages/sso/db/development"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_CERT_PRODUCTION }}
+          path: ./resources/base/storages/sso/db/development
+
+      - name: "resources/base/storages/sso/db/production"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_CERT_PRODUCTION }}
+          path: ./resources/base/storages/sso/db/production

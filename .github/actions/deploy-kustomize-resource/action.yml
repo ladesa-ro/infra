@@ -1,0 +1,35 @@
+name: Deploy kustomize resource
+description: Deploys a kustomize kubernetes resource into the cluster
+
+inputs:
+  enabled:
+    description: "set true for enabled and false for disabled"
+  path:
+    description: "directory to kustomization"
+  namespace:
+    description: "namespace"
+  should-delete-on-disabled:
+    description: "should delete on disabled"
+
+runs:
+  using: composite
+
+  steps:
+    - shell: bash
+      env:
+        RESOURCE_PATH: ${{ inputs.path }}
+        RESOURCE_ENABLED: ${{ inputs.enabled }}
+        RESOURCE_NAMESPACE: ${{ inputs.namespace }}
+        RESOURCE_SHOULD_DELETE_ON_DISABLED: ${{ inputs.should-delete-on-disabled }}
+      run: |
+        EXTRA_OPTS=""
+
+        if [ ! -z "${RESOURCE_NAMESPACE}" ]; then
+          EXTRA_OPTS+=" -n ${RESOURCE_NAMESPACE}";
+        fi
+
+        if [ "${RESOURCE_ENABLED}" == "true" ]; then
+          kubectl apply -k ${RESOURCE_PATH} ${EXTRA_OPTS};
+        elif [ "${RESOURCE_SHOULD_DELETE_ON_DISABLED}" == "true" ]; then
+          kubectl delete -k ${RESOURCE_PATH} ${EXTRA_OPTS} --ignore-not-found=true;
+        fi
