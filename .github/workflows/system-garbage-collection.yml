@@ -7,7 +7,7 @@ on:
   push:
       paths: 
         - '.github/workflows/system-garbage-collection.yml'
-        - 'utils/collect-garbage.sh'
+        - 'utils/cleanup/**/*'
 jobs:
   system-cleanup:
     runs-on:
