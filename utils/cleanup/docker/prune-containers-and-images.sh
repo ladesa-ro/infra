@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+set -e;
+
 echo  ================================================================
 echo "Cleaning orphaned docker containers and images..."
 echo  ================================================================
