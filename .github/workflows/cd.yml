@@ -78,3 +78,44 @@ jobs:
         with:
           enabled: ${{ vars.ENABLE_STORAGE_REGISTRY_ARTIFACTS_PRODUCTION }}
           path: ./resources/base/storages/registry/artifacts/production
+
+
+      - name: "resources/services/databases/api/kustomize/development"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_SERVICE_DATABASE_API_DEVELOPMENT }}
+          path: ./resources/services/databases/api/kustomize/development
+
+      - name: "resources/services/databases/api/kustomize/production"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_SERVICE_DATABASE_API_PRODUCTION }}
+          path: ./resources/services/databases/api/kustomize/production
+
+
+
+      - name: "resources/services/databases/sso/kustomize/development"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_SERVICE_DATABASE_SSO_DEVELOPMENT }}
+          path: ./resources/services/databases/sso/kustomize/development
+
+      - name: "resources/services/databases/sso/kustomize/production"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_SERVICE_DATABASE_SSO_PRODUCTION }}
+          path: ./resources/services/databases/sso/kustomize/production
+
+
+
+      - name: "resources/services/registry/kustomize/development"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_SERVICE_REGISTRY_DEVELOPMENT }}
+          path: ./resources/services/registry/kustomize/development
+
+      - name: "resources/services/registry/kustomize/production"
+        uses: ./.github/actions/deploy-kustomize-resource
+        with:
+          enabled: ${{ vars.ENABLE_SERVICE_REGISTRY_PRODUCTION }}
+          path: ./resources/services/registry/kustomize/production
