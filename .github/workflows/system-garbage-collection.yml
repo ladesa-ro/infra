@@ -15,5 +15,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: bash ./garbage-collect.sh
-        working_directory: utils/cleanup
+        working-directory: utils/cleanup
         
