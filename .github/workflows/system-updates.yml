@@ -13,11 +13,12 @@ jobs:
     runs-on:
       group: maintenance
     steps:
-      - name: update users/devops
-        run: |
-          su devops -c "topgrade --yes --skip-notify --disable system"
-        
+
       - name: update system
         run: |
           topgrade --yes --skip-notify
 
+      - name: update users/devops
+        run: |
+          su devops -c "topgrade --yes --skip-notify --disable system"
+        
